@@ -262,4 +262,11 @@
     <string name="yearsCoInDriveTeam">How many years of experience does your co-driver have?</string>
     <string name="matchClimbTime">When in the match do you start to climb?</string>
     <string name="climbStartTime">Time remaining when climb was started</string>
+    <string name="doesntMoveAuto">doesn\'t move</string>
+    <string name="intakeAuto">intake</string>
+    <string name="teleopAuto">teleop</string>
+    <string name="cross_initiation_lineAuto">cross initiation line</string>
+    <string name="removeballsAuto">remove balls</string>
+    <string name="bottomPCellAuto">0</string>
+    <string name="topPCellAuto">0</string>
 </resources>
