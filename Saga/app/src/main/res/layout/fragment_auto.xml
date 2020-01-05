@@ -1,0 +1,85 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/DarkGray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            android:text="Top Power Cell"
+            android:textAlignment="center"
+            android:textColor="@color/MediumBlue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/topPCellAuto"
+            android:backgroundTint="@color/Goldish" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Bottom Power Cell"
+            android:layout_weight="1.6"
+            android:textAlignment="center"
+            android:textColor="@color/MediumBlue"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/bottomPCellAuto"
+            android:backgroundTint="@color/Goldish"
+            android:layout_weight="1"
+            tools:targetApi="lollipop" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/removeballsAuto"
+            android:textColor="@color/DarkGreen"
+            />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cross_initiation_lineAuto"
+            android:textColor="@color/DarkGreen"
+            />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/doesntMoveAuto"
+            android:textColor="@color/DarkGreen"
+            />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intakeAuto"
+            android:textColor="@color/DarkGreen"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/teleopAuto"
+            android:textColor="@color/Black"
+
+    </LinearLayout>
+
+</LinearLayout>

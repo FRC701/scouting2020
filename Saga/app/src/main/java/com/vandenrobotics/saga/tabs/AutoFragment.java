@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 
 import com.vandenrobotics.saga.R;
 import com.vandenrobotics.saga.activities.MatchActivity;
@@ -42,7 +41,7 @@ public class AutoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView = inflater.inflate(R.layout.fragment_pre, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_auto, container, false);
         mActivity = (MatchActivity) getActivity();
         mEvent = mActivity.mEvent;
         mMatchNum = mActivity.mMatchNumber;
