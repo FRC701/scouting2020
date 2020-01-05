@@ -27,7 +27,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/topPCellAuto"
-            android:backgroundTint="@color/Goldish" />
+            android:backgroundTint="@color/Goldish"
+            android:id="@+id/topPCellAuto"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -43,6 +44,7 @@
             android:text="@string/bottomPCellAuto"
             android:backgroundTint="@color/Goldish"
             android:layout_weight="1"
+            android:id="@+id/bottomPCellAuto"
             tools:targetApi="lollipop" />
     </LinearLayout>
     <LinearLayout
@@ -55,30 +57,42 @@
             android:layout_height="wrap_content"
             android:text="@string/removeballsAuto"
             android:textColor="@color/DarkGreen"
+            android:id="@+id/removeBallsAuto"
             />
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cross_initiation_lineAuto"
             android:textColor="@color/DarkGreen"
+            android:id="@+id/cross_initiation_lineAuto"
             />
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/doesntMoveAuto"
             android:textColor="@color/DarkGreen"
+            android:id="@+id/doesntMoveAuto"
             />
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/intakeAuto"
             android:textColor="@color/DarkGreen"
+            android:id="@+id/intakeAuto"
+            />
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/noShowAuto"
+            android:textColor="@color/DarkGreen"
+            android:id="@+id/noShowAuto"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/teleopAuto"
-            android:textColor="@color/Black"/>
+            android:textColor="@color/Black"
+            android:id="@+id/teleopAuto"/>
 
     </LinearLayout>
 

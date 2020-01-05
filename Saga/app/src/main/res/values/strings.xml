@@ -192,4 +192,5 @@
     <string name="removeballsAuto">remove balls</string>
     <string name="bottomPCellAuto">0</string>
     <string name="topPCellAuto">0</string>
+    <string name="noShowAuto">no show</string>
 </resources>

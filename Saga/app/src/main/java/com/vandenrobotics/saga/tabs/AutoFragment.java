@@ -100,7 +100,7 @@ public class AutoFragment extends Fragment {
     private void assignViews(View view){
         try{
             noShow = (CheckBox) view.findViewById(R.id.noShow_Cb);
-            ssComments_Et = (EditText) view.findViewById(R.id.ssComments_Et);
+
 
             viewsAssigned = true;
         } catch (Exception e){
