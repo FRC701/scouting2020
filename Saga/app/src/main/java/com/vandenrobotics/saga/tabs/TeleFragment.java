@@ -42,7 +42,7 @@ public class TeleFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView = inflater.inflate(R.layout.fragment_post, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tele, container, false);
         mActivity = (MatchActivity)getActivity();
         mEvent = mActivity.mEvent;
         mMatchNum = mActivity.mMatchNumber;
@@ -71,7 +71,7 @@ public class TeleFragment extends Fragment {
         //gets data from teleTab when clicked out/ paused
         super.onPause();
         Stats stats = saveData();
-        statsRepo.setPostStats(stats);
+        statsRepo.setTele(stats);
     }
     public Stats saveData(){
         Stats stats = new Stats();
@@ -88,8 +88,6 @@ public class TeleFragment extends Fragment {
         stats.setFoul(foul);
         int techFoul = (techFoul_Np.getValue());
         stats.setTechFoul(techFoul);
-        String cS = (climbStart.getText().toString());
-        stats.setClimbTime(cS);
         Log.d("TeleFrag saveData", "team id " + stats.getTeamNum());
         return stats;
     }
@@ -107,7 +105,6 @@ public class TeleFragment extends Fragment {
         yellowCard_Cb.setChecked(stats.getYellowCard() == 1);
         foul_Np.setValue(stats.getFoul());
         techFoul_Np.setValue(stats.getTechFoul());
-        climbStart.setText(stats.getClimbTime());
 
     }
     public void assignViews(View view){
@@ -117,7 +114,7 @@ public class TeleFragment extends Fragment {
             techFoul_Np = (NumberPicker) view.findViewById(R.id.techFoul_Np);
             redCard_Cb = (CheckBox) view.findViewById(R.id.redCard_Cb);
             yellowCard_Cb = (CheckBox) view.findViewById(R.id.yellowCard_Cb);
-            climbStart = (EditText) view.findViewById(R.id.climbStart);
+
 
             viewAssigned = true;
        }catch(Exception e){
