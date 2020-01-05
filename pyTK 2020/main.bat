@@ -1,0 +1,1 @@
+activate && cd "C:\Scouting\pyTK 2019" && python main.py && pause
