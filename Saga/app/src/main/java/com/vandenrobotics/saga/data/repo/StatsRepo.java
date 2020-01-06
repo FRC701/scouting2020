@@ -37,8 +37,14 @@ public class StatsRepo {
                 + Stats.KEY_RedCard + " INTEGER , "
                 + Stats.KEY_YellowCard + " INTEGER , "
                 + Stats.KEY_Fouls + " INTEGER , "
-                + Stats.KEY_TechFouls + " INTEGER , "
-                + Stats.KEY_ClimbTime + " TEXT , "+
+                + Stats.KEY_topPCellAuto + " INTEGER , "
+                + Stats.KEY_bottomPCellAuto + " INTEGER , "
+                + Stats.KEY_removeBallsAuto + " INTEGER , "
+                + Stats.KEY_crossLineAuto + " INTEGER , "
+                + Stats.KEY_doesntMoveAuto + " INTEGER , "
+                + Stats.KEY_intakeAuto + " INTEGER , "
+                + Stats.KEY_noShowAuto + " INTEGER , "
+                + Stats.KEY_TechFouls + " INTEGER , "+
                 //makes the CompId, MatchNum and MatchPos Primary Key so there needs
                 //to be a unique combination of these attributes in each row in the Stats table
                 "PRIMARY KEY ( '" + Stats.KEY_CompId
@@ -77,6 +83,13 @@ public class StatsRepo {
         values.put(Stats.KEY_YellowCard, stats.getYellowCard());
         values.put(Stats.KEY_Fouls, stats.getFoul());
         values.put(Stats.KEY_TechFouls, stats.getTechFoul());
+        values.put(Stats.KEY_topPCellAuto, stats.getTopPCellAuto());
+        values.put(Stats.KEY_bottomPCellAuto, stats.getBottomPCellAuto());
+        values.put(Stats.KEY_removeBallsAuto, stats.getRemoveBallsAuto());
+        values.put(Stats.KEY_crossLineAuto, stats.getCrossLineAuto());
+        values.put(Stats.KEY_doesntMoveAuto, stats.getDoesntMoveAuto());
+        values.put(Stats.KEY_intakeAuto, stats.getIntakeAuto());
+        values.put(Stats.KEY_noShowAuto, stats.getNoShowAuto());
 
         //check if there is a conflict. It should return -1 if there is a copy of the exact combination of the Primary Keys
         statsId=(int)db.insertWithOnConflict(Stats.TABLE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
@@ -126,10 +139,17 @@ public class StatsRepo {
         ContentValues values = new ContentValues();
         Log.d("StatsRepo auto", "team id " + stats.getTeamNum());
         values.put(Stats.KEY_NoShow, stats.getNoShow());
+        values.put(Stats.KEY_topPCellAuto, stats.getTopPCellAuto());
+        values.put(Stats.KEY_bottomPCellAuto, stats.getBottomPCellAuto());
+        values.put(Stats.KEY_removeBallsAuto, stats.getRemoveBallsAuto());
+        values.put(Stats.KEY_crossLineAuto, stats.getCrossLineAuto());
+        values.put(Stats.KEY_doesntMoveAuto, stats.getDoesntMoveAuto());
+        values.put(Stats.KEY_intakeAuto, stats.getIntakeAuto());
+        values.put(Stats.KEY_noShowAuto, stats.getNoShowAuto());
 
         int row = db.update(Stats.TABLE, values, Stats.KEY_CompId + " =  '" + stats.getCompId() + "' AND "
                 + Stats.KEY_MatchNum + " = " + stats.getMatchNum() + " AND "
-                + Stats.KEY_TeamNum + " = " + stats.getTeamNum(), null);
+                + Stats.KEY_TeamNum + " = " + stats.getTeamNum(),null);
 
         Log.d("Sarah", row + "");
         DatabaseManager.getInstance().closeDatabase();
@@ -170,7 +190,13 @@ public class StatsRepo {
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         //makes the selection query for the stats table to get the auto stats
         String selectQuery = " SELECT Stats." + Stats.KEY_NoShow
-                + ", Stats." + Stats.KEY_Auto
+                + ", Stats." + Stats.KEY_topPCellAuto
+                + ", Stats." + Stats.KEY_bottomPCellAuto
+                + ", Stats." + Stats.KEY_removeBallsAuto
+                + ", Stats." + Stats.KEY_crossLineAuto
+                + ", Stats." + Stats.KEY_doesntMoveAuto
+                + ", Stats." + Stats.KEY_intakeAuto
+                + ", Stats." + Stats.KEY_noShowAuto
                 + " FROM " + Stats.TABLE
                 + " WHERE Stats." + Stats.KEY_CompId + " = \"" + event + "\""
                 + " AND Stats." + Stats.KEY_MatchNum + " = " + match
@@ -182,6 +208,13 @@ public class StatsRepo {
         //gets the first row that matches the specifications from the selection query
         if (cursor.moveToFirst()){
             stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_NoShow)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_topPCellAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_bottomPCellAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_removeBallsAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_crossLineAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_doesntMoveAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_intakeAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_noShowAuto)));
         }
 
         cursor.close();

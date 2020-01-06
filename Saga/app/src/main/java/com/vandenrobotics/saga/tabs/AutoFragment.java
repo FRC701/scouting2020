@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -21,7 +22,14 @@ public class AutoFragment extends Fragment {
     private MatchActivity mActivity;
 
     private boolean viewAssigned = false;
-    private CheckBox noShow;
+    private Button topPCellAuto;
+    private Button bottomPCellAuto;
+    private CheckBox removeballsAuto;
+    private CheckBox crossLineAuto;
+    private CheckBox doesntMoveAuto;
+    private CheckBox intakeAuto;
+    private CheckBox noShowAuto;
+    private Button teleopAuto;
     private EditText ssComments_Et;
 
     private StatsRepo statsRepo;
@@ -30,6 +38,8 @@ public class AutoFragment extends Fragment {
     private int mMatchNum;
     private int mTeamNum;
     private int mMatchPos;
+    private int bottomPCA;
+    private int topPCA;
 
     private int noShowValue;
 
@@ -70,7 +80,7 @@ public class AutoFragment extends Fragment {
     public void onPause(){
         super.onPause();
         Stats stats = saveData();
-        statsRepo.setPreStats(stats);
+        statsRepo.setAuto(stats);
     }
 
     public Stats saveData(){
@@ -78,7 +88,7 @@ public class AutoFragment extends Fragment {
         stat.setCompId(mEvent);
         stat.setMatchNum(mMatchNum);
         stat.setTeamNum(mTeamNum);
-        int nS = (noShow.isChecked() ? 1 : 0);
+        int nS = (noShowAuto.isChecked() ? 1 : 0);
         stat.setHadAuto(nS);
         String sS = (ssComments_Et.getText().toString());
         stat.setSscomments(sS);
@@ -93,30 +103,52 @@ public class AutoFragment extends Fragment {
     }
 
     private void loadData() {
-        Stats stats = statsRepo.getPreStats(mEvent, mMatchNum, mMatchPos);
-        noShow.setChecked(stats.getNoShow() == 1);
+        Stats stats = statsRepo.getAuto(mEvent, mMatchNum, mMatchPos);
+        noShowAuto.setChecked(stats.getNoShow() == 1);
         ssComments_Et.setText(stats.getSsComments());
     }
-    private void assignViews(View view){
-        try{
-            noShow = (CheckBox) view.findViewById(R.id.noShow_Cb);
+    private void assignViews(View view) {
+        try {
+            topPCellAuto = (Button) view.findViewById(R.id.topPCellAuto);
+            bottomPCellAuto = (Button) view.findViewById(R.id.bottomPCellAuto);
+            removeballsAuto = (CheckBox) view.findViewById(R.id.removeBallsAuto);
+            crossLineAuto = (CheckBox) view.findViewById(R.id.crossLineAuto);
+            doesntMoveAuto = (CheckBox) view.findViewById(R.id.doesntMoveAuto);
+            intakeAuto = (CheckBox) view.findViewById(R.id.intakeAuto);
+            noShowAuto = (CheckBox) view.findViewById(R.id.noShowAuto);
+            teleopAuto = (Button) view.findViewById(R.id.teleopAuto);
 
 
             viewsAssigned = true;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             viewsAssigned = false;
         }
     }
+     public class OnClickPC implements Button.OnClickListener{
+            @Override
+            public void onClick (View view){
+                switch (view.getId()){
+                    case R.id.topPCellAuto:
+                        if(removeballsAuto.isChecked()&& topPCA >0){
+                            topPCA--;
+                        }
+                        else {
+                            topPCA++;
+                        }
+                        topPCellAuto.setText(topPCA);
+                        break;
+                    case R.id. bottomPCellAuto:
+                        if(removeballsAuto.isChecked()&& bottomPCA >0){
+                            bottomPCA--;
+                        }
+                        else {
+                            bottomPCA++;
+                        }
+                        bottomPCellAuto.setTag(bottomPCA);
+                        break;
+                }
+            }
 
-    public void command_noShow(View view) {
-        if (noShow.isChecked()) {
-            noShowDF.show(getChildFragmentManager(), "NoShowDialogFragment");
-        }
-    }
-
-
-    public void setNoShow(boolean b){
-        noShow.setChecked(b);
     }
 }

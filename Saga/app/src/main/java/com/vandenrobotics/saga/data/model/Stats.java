@@ -15,6 +15,17 @@ public class Stats {
     public static final String KEY_MatchNum = "MatchNumber";
     public static final String KEY_TeamNum = "TeamNumber";
     public static final String KEY_MatchPosition = "MatchPosition";
+
+    //auto
+    public static final String KEY_topPCellAuto = "topPCellAuto";
+    public static final String KEY_bottomPCellAuto = "bottomPCellAuto";
+    public static final String KEY_removeBallsAuto = "removeBallsAuto";
+    public static final String KEY_crossLineAuto = "crossLineAuto";
+    public static final String KEY_doesntMoveAuto = "doesntMoveAuto";
+    public static final String KEY_intakeAuto = "intakeAuto";
+    public static final String KEY_noShowAuto = "noShowAuto";
+
+    //teleop
     public static final String KEY_NoShow = "NoShow";
     public static final String KEY_RobotDisabled = "RobotDisabled";
     public static final String KEY_RedCard = "RedCard";
@@ -36,6 +47,14 @@ public class Stats {
     private int techFoul;
     private int disabled;
 
+    //auto
+    private int topPCellAuto;
+    private int bottomPCellAuto;
+    private int removeBallsAuto;
+    private int crossLineAuto;
+    private int doesntMoveAuto;
+    private int intakeAuto;
+    private int noShowAuto;
 
     public Stats(){
         compId = "None";
@@ -49,6 +68,13 @@ public class Stats {
         foul = 0;
         techFoul = 0;
         disabled = 0;
+        topPCellAuto = 0;
+        bottomPCellAuto = 0;
+        removeBallsAuto = 0;
+        crossLineAuto = 0;
+        doesntMoveAuto = 0;
+        intakeAuto = 0;
+        noShowAuto = 0;
     }
 
     public String getCompId(){
@@ -127,6 +153,27 @@ public class Stats {
     public void setTechFoul(int i){
         techFoul = i;
     }
+
+    public int getTopPCellAuto () { return topPCellAuto; }
+    public void setTopPCellAuto (int i) { topPCellAuto = i; }
+
+    public int getBottomPCellAuto () { return bottomPCellAuto; }
+    public void setBottomPCellAuto (int i) { bottomPCellAuto = i; }
+
+    public int getRemoveBallsAuto () {return removeBallsAuto; }
+    public void setRemoveBallsAuto (int i) { removeBallsAuto = i; }
+
+    public int getCrossLineAuto () {return crossLineAuto; }
+    public void setCrossLineAuto (int i) { crossLineAuto = i; }
+
+    public int getDoesntMoveAuto () {return doesntMoveAuto; }
+    public void setDoesntMoveAuto (int i) { doesntMoveAuto = i; }
+
+    public int getIntakeAuto () {return intakeAuto; }
+    public void setIntakeAuto (int i) { intakeAuto = i; }
+
+    public int getNoShowAuto () {return noShowAuto; }
+    public void setNoShowAuto (int i){ noShowAuto = i; }
 
 }
 
