@@ -23,24 +23,16 @@ class RankingController():
     # where key corredsponds to a value in self.rankingTypes and term is
     # the function to call when that option is selected
     rankingTypes = ["None",
-                    "Rocket Top Cargo",
-                    "Rocket Top Hatch",
-                    "Rocket Middle Cargo",
-                    "Rocket Middle Hatch",
-                    "Rocket Bottom Cargo",
-                    "Rocket Bottom Hatch",
-                    "Cargo Ship Cargo",
-                    "Cargo Ship Hatch"]
+                    "Auto Top Power Cell",
+                    "Auto Bottom Power Cell",
+                    "Tele Top Power Cell",
+                    "Tele Bottom Power Cell"]
 
     rankingIndex = [("None", get_none),
-                    ("Rocket Top Cargo", get_rocketTopC_rank),
-                    ("Rocket Top Hatch", get_rocketTopH_rank),
-                    ("Rocket Middle Cargo", get_rocketMiddleC_rank),
-                    ("Rocket Middle Hatch", get_rocketMiddleH_rank),
-                    ("Rocket Bottom Cargo", get_rocketBottomC_rank),
-                    ("Rocket Bottom Hatch", get_rocketBottomH_rank),
-                    ("Cargo Ship Cargo", get_cargoShipC_rank),
-                    ("Cargo Ship Hatch", get_cargoShipH_rank)]
+                    ("Auto Top Power Cell", get_autoTopPCell_rank),
+                    ("Auto Bottom Power Cell", get_autoBottomPCell_rank),
+                    ("Tele Top Power Cell", get_teleTopPC_rank),
+                    ("Tele Bottom Power Cell", get_teleBottomPC_rank)]
 
     sortOptions = [("Maximum","max"),("Average","avg"),("Minimum","min")]
 

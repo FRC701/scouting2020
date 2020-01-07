@@ -24,28 +24,27 @@ def create_table():
               PRIMARY KEY(MatchNumber, TeamNumber, MatchPosition));
     CREATE TABLE IF NOT EXISTS PitDataAll( TeamNumber INTEGER PRIMARY KEY,
               Auto INTEGER, DriveBlindly INTEGER, Vision INTEGER, Camera INTEGER, Other INTEGER,
-              StartLevel1 INTEGER, StartLevel2 INTEGER, RobotCargo INTEGER, RobotHatch INTEGER,
-              CargoShipCargo INTEGER, CargoShipHatch INTEGER, HatchInCargoShip INTEGER, CargoInCargoShip INTEGER,
-              HatchInRocket INTEGER, CargoInRocket INTEGER, IntakeHatch INTEGER, IntakeCargo INTEGER,
-              ReachFirstPlatform INTEGER, ReachSecondPlatform INTEGER, ReachThirdPlatform INTEGER, ScoreBottom INTEGER,
-              ScoreMiddle INTEGER, ScoreTop INTEGER, TypeOfIntakeAndMech TEXT,
+              TypeOfIntakeAndMech TEXT,
               TypeOfDriveTrain TEXT, ProgrammingLanguage TEXT, Comments TEXT, AverageSpeed TEXT,
               CoDriverExperience TEXT, DriverExperience TEXT, Climb TEXT);
     CREATE TABLE IF NOT EXISTS StatsAll( CompId TEXT, MatchNumber INTEGER,
               TeamNumber INTEGER, MatchPosition INTEGER,
-              NoShow INTEGER, StartLevel1 INTEGER, 
-              StartLevel2 INTEGER, PreloadCargo INTEGER,
-              PreloadHatch INTEGER, SandstormComments TEXT, 
-              RocketTopCargo INTEGER, RocketTopHatch INTEGER, 
-              RocketMiddleCargo INTEGER, RocketMiddleHatch INTEGER, 
-              RocketBottomCargo INTEGER, RocketBottomHatch INTEGER, 
-              CargoShipCargo INTEGER, CargoShipHatch INTEGER,
-              CrossHubline INTEGER, EndLevel1 INTEGER,
-              EndLevel2 INTEGER, EndLevel3 INTEGER, 
-              EndNone INTEGER, RobotDisabled INTEGER,
+              TopPCellAuto INTEGER, BottomPCellAuto INTEGER,
+              CrossLineAuto INTEGER,
+              DoesntMoveAuto INTEGER, IntakeAuto INTEGER,
+              NoShowAuto INTEGER,
+              TeleComments TEXT, TeleTopPC INTEGER,  
+              TeleBottomPC INTEGER,
+              TeleRotation INTEGER, TelePosition INTEGER,
+              TeleHangSuccess INTEGER, TeleHangAttempt INTEGER,
+              TeleHangNA INTEGER, TeleAssist INTEGER, 
+              TeleAssisted INTEGER, TeleDefenseNone INTEGER,
+              TeleDefenseSome INTEGER, TeleDefenseAll INTEGER,
+              TeleDefenseGood INTEGER, TeleDefenseBad INTEGER, 
+              TeleDefenseOk INTEGER, TeleDefenseNA INTEGER,
+              NoShow INTEGER,  RobotDisabled INTEGER,
               RedCard INTEGER, YellowCard INTEGER, 
               Fouls INTEGER, TechFouls INTEGER,
-              ClimbTime TEXT,
               PRIMARY KEY(MatchNumber, TeamNumber , MatchPosition));
     CREATE TABLE IF NOT EXISTS TeamsAll( TeamNumber INTEGER not null PRIMARY KEY, TeamName TEXT);
     CREATE TABLE IF NOT EXISTS Alliances( AllianceNum INTEGER not null PRIMARY KEY, TeamNum INTEGER);
@@ -53,27 +52,10 @@ def create_table():
                 OffWS REAL,
                 TotalWS REAL, NegWS REAL,
                 PercentNoShow REAL,
-                PercentStartLevel1 REAL, PercentStartLevel2 REAL,
-                PercentPreloadC REAL, PercentPreloadH REAL, 
-                PercentCrossHubLine REAL,
-                AvgRocketTopC REAL, AvgRocketTopH REAL,
-                AvgRocketMiddleC REAL, AvgRocketMiddleH REAL,
-                AvgRocketBottomC REAL, AvgRocketBottomH REAL,
-                AvgCargoShipC REAL, AvgCargoShipH REAL,
-                PercentEndLevel1 REAL, PercentEndLevel2 REAL, 
-                PercentEndLevel3 REAL, PercentEndNone REAL,
                 PercentFouls REAL, PercentTechFouls REAL,
                 PercentYellowCard REAL, PercentRedCard REAL, 
-                PercentRobotDisabled REAL,
-                MaxRocketTopC REAL, MinRocketTopC REAL,
-                MaxRocketTopH REAL, MinRocketTopH REAL,
-                MaxRocketMiddleC REAL, MinRocketMiddleC REAL,
-                MaxRocketMiddleH REAL, MinRocketMiddleH REAL,
-                MaxRocketBottomC REAL, MinRocketBottomC REAL,
-                MaxRocketBottomH REAL, MinRocketBottomH REAL,
-                MaxCargoShipC REAL, MinCargoShipC REAL,
-                MaxCargoShipH REAL, MinCargoShipH REAL, TotalCargo REAL,
-                TotalHatch REAL, TotalGamePiece REAL)''')
+                PercentRobotDisabled REAL, 
+                TotalGamePiece REAL)''')
 
 def add_data(model):
     model.imported = False
@@ -134,7 +116,7 @@ def add_data(model):
                 print("No stats info to import")
                 model.imported = True
             else:
-                c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', stats)
+                c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)', stats)
                 model.imported = True
                 print("successfully imported stats") 
         except Exception as e:
@@ -231,7 +213,8 @@ def add_stats():
         tc.execute('SELECT * FROM Stats')
         stats = tc.fetchall()
         print(stats)
-        c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', stats)
+        c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)',
+            stats)
 
 def clear_importData():
     model.imported = False

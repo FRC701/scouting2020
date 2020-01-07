@@ -14,23 +14,34 @@ class _TeamInfo(object):
         self.matches = []
         # Things that go into TeamInfo....... numbers that you want as percentages and totals
         # The numbers are set up so the numbers set as 0 are check boxes that incriment when set to true                     
-        self.noShow = 0                    
-        self.startLevel1 = 0
-        self.startLevel2 = 0
-        self.preloadCargo = 0
-        self.preloadHatch = 0
-        self.crossHubline = 0
-        self.endLevel1 = 0
-        self.endLevel2 = 0
-        self.endLevel3 = 0
-        self.endNone = 0
+        self.noShow = 0
         self.robotDisabled = 0
         self.redCard = 0
         self.yellowCard = 0
         self.fouls = 0
         self.techFouls = 0
         self.hasFoul = 0
-        
+        self.autoTopPCell = 0
+        self.autoBottomPCell = 0
+        self.autoCrossLine = 0
+        self.autoDoesntMove = 0
+        self.autoIntake = 0
+        self.autoNoShow = 0
+        self.teleComments = ""
+        self.teleTopPC = 0
+        self.teleBottomPC = 0
+        self.teleRotation = 0
+        self.telePosition = 0
+        self.teleHangSuccess = 0
+        self.teleHangAttempt = 0
+        self.teleHangNA = 0
+        self.teleAssist = 0
+        self.teleAssisted = 0
+        self.teleDefenseNone = 0
+        self.teleDefenseSome = 0
+        self.teleDefenseAll = 0
+        self.teleDefenseGood = 0
+        self.teleDefenseBad = 0
 
     def get_info(self):
         self.totalFoul =  self.fouls
@@ -38,26 +49,38 @@ class _TeamInfo(object):
         self.totalTechFoul = self.techFouls
         # fouls are in arrays so they need to be added manually
 
-        self.pCrossHubLine = float(100 * self.crossHubline) / float(len(self.matches)) if len(self.matches) else 0
         self.pNoShow = float(100*self.noShow)/float(len(self.matches)) if len(self.matches) else 0
-
-        self.pStartLevel1 = float(100*self.startLevel1)/float(len(self.matches)) if len(self.matches) else 0
-        self.pStartLevel2 = float(100*self.startLevel2)/float(len(self.matches)) if len(self.matches) else 0
-                                                      
-        self.pPreloadCargo = float(100*self.preloadCargo)/float(len(self.matches)) if len(self.matches) else 0
-        self.pPreloadHatch = float(100*self.preloadHatch)/float(len(self.matches)) if len(self.matches) else 0
-                                                                        
-        self.pEndLevel1 = float(100*self.endLevel1)/float(len(self.matches)) if len(self.matches) else 0
-        self.pEndLevel2 = float(100*self.endLevel2)/float(len(self.matches)) if len(self.matches) else 0
-        self.pEndLevel3 = float(100*self.endLevel3)/float(len(self.matches)) if len(self.matches) else 0
-        self.pEndNone = float(100*self.endNone)/float(len(self.matches)) if len(self.matches) else 0
 
         self.pDisabled = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0                             
         self.pRedCard = float(100*self.redCard)/float(len(self.matches)) if len(self.matches) else 0
         self.pYellowCard = float(100*self.yellowCard)/float(len(self.matches)) if len(self.matches) else 0
         self.pFoul = float(100*self.totalFoul)/float(len(self.matches)) if len(self.matches) else 0
         self.pTechFoul = float(100*self.totalTechFoul)/float(len(self.matches)) if len(self.matches) else 0
-                
+        # self.pAutoTopPCell = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        # self.pAutoBottomPCell = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pAutoCrossLine = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pAutoDoesntMove = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pAutoIntake = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pAutoNoShow = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        # self.pTeleTopPC = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        # self.pTeleBottomPC = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleRotation = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTelePosition = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleHangSucess = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleHangAttempt = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleHangNA = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleAssist = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleAssisted = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseNone = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseSome = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseAll = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseGood = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseBad = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseOk = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pTeleDefenseNA = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+        self.pNoShow = float(100*self.robotDisabled)/float(len(self.matches)) if len(self.matches) else 0
+
+
     def getAttr(self, source):
         #return getattr(self, source)
         return None
@@ -70,54 +93,27 @@ class _TeamScores(object):
     """Used to handle scoring data for different teams."""
 
     def __init__(self):
-        self.rocketTopC = []
-        self.rocketTopH = []
-        self.rocketMiddleC = []
-        self.rocketMiddleH = []
-        self.rocketBottomC = []
-        self.rocketBottomH = []
-        self.cargoShipC = []
-        self.cargoShipH = []
-
-        self.totalHatch = 0
-        self.totalCargo = 0
-        self.totalGamePiece = 0
+        self.autoTopPCell = []
+        self.autoBottomPCell = []
+        self.teleTopPC = []
+        self.teleBottomPC = []
 
     def get_maxmin_scores(self):
-        self.maxRocketTopC = max(self.rocketTopC) if len(self.rocketTopC) else 0
-        self.minRocketTopC = min(self.rocketTopC) if len(self.rocketTopC) else 0
-        self.maxRocketTopH = max(self.rocketTopH) if len(self.rocketTopH) else 0
-        self.minRocketTopH = min(self.rocketTopH) if len(self.rocketTopH) else 0
-
-        self.maxRocketMiddleC = max(self.rocketMiddleC) if len(self.rocketMiddleC) else 0
-        self.minRocketMiddleC = min(self.rocketMiddleC) if len(self.rocketMiddleC) else 0
-        self.maxRocketMiddleH = max(self.rocketMiddleH) if len(self.rocketMiddleH) else 0
-        self.minRocketMiddleH = min(self.rocketMiddleH) if len(self.rocketMiddleH) else 0
-
-        self.maxRocketBottomC = max(self.rocketBottomC) if len(self.rocketBottomC) else 0
-        self.minRocketBottomC = min(self.rocketBottomC) if len(self.rocketBottomC) else 0
-        self.maxRocketBottomH = max(self.rocketBottomH) if len(self.rocketBottomH) else 0
-        self.minRocketBottomH = min(self.rocketBottomH) if len(self.rocketBottomH) else 0
-
-        self.maxCargoShipC = max(self.cargoShipC) if len(self.cargoShipC) else 0
-        self.minCargoShipC = min(self.cargoShipC) if len(self.cargoShipC) else 0
-        self.maxCargoShipH = max(self.cargoShipH) if len(self.cargoShipH) else 0
-        self.minCargoShipH = min(self.cargoShipH) if len(self.cargoShipH) else 0
+        self.maxAutoTopPCell = max(self.autoTopPCell) if len(self.autoTopPCell) else 0
+        self.maxAutoBottomPCell = max(self.autoBottomPCell) if len(self.autoBottomPCell) else 0
+        self.maxTeleTopPC = max(self.teleTopPC) if len(self.teleTopPC) else 0
+        self.maxTeleBottomPC = max(self.teleBottomPC) if len(self.teleBottomPC) else 0
+        self.minAutoTopPCell = min(self.autoTopPCell) if len(self.autoTopPCell) else 0
+        self.minAutoBottomPCell = min(self.autoBottomPCell) if len(self.autoBottomPCell) else 0
+        self.minTeleTopPC = min(self.teleTopPC) if len(self.teleTopPC) else 0
+        self.minTeleBottomPC = min(self.teleBottomPC) if len(self.teleBottomPC) else 0
 
     def get_avgOff_scores(self, matches=1):
 
-        self.avgRocketTopC = float(sum(self.rocketTopC))/float(matches) if matches else 0
-        self.avgRocketTopH = float(sum(self.rocketTopH))/float(matches) if matches else 0
-        self.avgRocketMiddleC = float(sum(self.rocketMiddleC))/float(matches) if matches else 0
-        self.avgRocketMiddleH = float(sum(self.rocketMiddleH))/float(matches) if matches else 0
-        self.avgRocketBottomC = float(sum(self.rocketBottomC))/float(matches) if matches else 0
-        self.avgRocketBottomH = float(sum(self.rocketBottomH))/float(matches) if matches else 0
-        self.avgCargoShipC = float(sum(self.cargoShipC))/float(matches) if matches else 0
-        self.avgCargoShipH = float(sum(self.cargoShipH))/float(matches) if matches else 0
-
-        self.totalCargo = self.avgRocketTopC + self.avgRocketMiddleC + self.avgRocketBottomC + self.avgCargoShipC
-        self.totalHatch = self.avgRocketTopH + self.avgRocketMiddleH + self.avgRocketBottomH + self.avgCargoShipH
-        self.totalGamePiece = (float(sum(self.rocketTopC))+float(sum(self.rocketTopH))+float(sum(self.rocketMiddleC))+float(sum(self.rocketMiddleH))+float(sum(self.rocketBottomC))+float(sum(self.rocketBottomH))+float(sum(self.cargoShipC))+float(sum(self.cargoShipH)))/float(matches)if matches else 0
+        self.avgAutoTopPCell = float(sum(self.autoTopPCell))/float(matches) if matches else 0
+        self.avgAutoBottomPCell = float(sum(self.autoBottomPCell)) / float(matches) if matches else 0
+        self.avgTeleTopPC = float(sum(self.teleTopPC)) / float(matches) if matches else 0
+        self.avgTeleBottomPC = float(sum(self.teleBottomPC)) / float(matches) if matches else 0
 
     def getAttr(self, source):
         return getattr(self, source)
@@ -147,14 +143,6 @@ class _TeamPitInfo(object):
 class TeamRankings(object):
     """Used to keep track of rankings for each team."""
 
-    rocketTopC_rank = []
-    rocketTopH_rank = []
-    rocketMiddleC_rank = []
-    rocketMiddleH_rank = []
-    rocketBottomC_rank = []
-    rocketBottomH_rank = []
-    cargoShipC_rank = []
-    cargoShipH_rank = []
     fouls_rank = []
     techFouls_rank = []
 
@@ -201,12 +189,6 @@ class Team(object):
         #weighted scores calculations
             
         self.offensiveWS = str(round(((self.Info.pCrossHubLine/100.0)*4.0)
-                                     + ((self.Info.pStartLevel2/100.0)*3.0)+((self.Info.pEndLevel1/100.0)*3.0)
-                                     + ((self.Info.pEndLevel2/100.0)*6.0)+((self.Info.pEndLevel3/100.0)*12.0)
-                                     + ((self.Scores.avgRocketTopC/4)*3.0)+((self.Scores.avgRocketTopH/4)*2.0)
-                                     + ((self.Scores.avgRocketMiddleC/4)*3.0) + ((self.Scores.avgRocketMiddleH/4)*2.0)
-                                     + ((self.Scores.avgRocketBottomC/4)*3.0)+((self.Scores.avgRocketBottomH/4)*2.0)
-                                     + ((self.Scores.avgCargoShipC/4)*3.0)+((self.Scores.avgCargoShipH/4)*2.0),2))
 
         self.negativeWS = str(round(((self.Info.pFoul/100.0)*-2.0)+((self.Info.pYellowCard/100.0)*-3.0)+((self.Info.pDisabled/100.0)*-10.0)
                                 +((self.Info.pRedCard/100.0)*-10)+((self.Info.pTechFoul/100.0)*-11.0),2))
@@ -217,15 +199,6 @@ class Team(object):
         self.numMatch = len(matches)
         self.pNoShow  = str(round(self.Info.pNoShow,2))  + "%"
 
-        self.pCrossHubLine = str(round(self.Info.pCrossHubLine,2))  + "%"
-        self.pStartLevel1 = str(round(self.Info.pStartLevel1,2))  + "%"
-        self.pStartLevel2 = str(round(self.Info.pStartLevel2,2))  + "%"
-        self.pPreloadCargo = str(round(self.Info.pPreloadCargo,2))  + "%"
-        self.pPreloadHatch = str(round(self.Info.pPreloadHatch,2))  + "%"
-        self.pEndLevel1 = str(round(self.Info.pEndLevel1,2))  + "%"
-        self.pEndLevel2 = str(round(self.Info.pEndLevel2,2))  + "%"
-        self.pEndLevel3 = str(round(self.Info.pEndLevel3,2))  + "%"
-        self.pEndNone = str(round(self.Info.pEndNone,2))  + "%"
         self.pRedCard = str(round(self.Info.pRedCard,2))  + "%"
         self.pYellowCard = str(round(self.Info.pYellowCard,2))  + "%"
 
@@ -234,18 +207,24 @@ class Team(object):
         self.pTechFoul = str(round(self.Info.pTechFoul, 2)) + "%"
         self.pDisabled = str(round(self.Info.pDisabled)) + "%"
 
-        self.totalHatch = str(round(self.Scores.totalHatch))
-        self.totalCargo = str(round(self.Scores.totalCargo))
-        self.totalGamePiece = str(round(self.Scores.totalGamePiece))
-        
-        self.avgRocketTopC = str(round(self.Scores.avgRocketTopC))
-        self.avgRocketTopH = str(round(self.Scores.avgRocketTopH))
-        self.avgRocketMiddleC = str(round(self.Scores.avgRocketMiddleC))
-        self.avgRocketMiddleH = str(round(self.Scores.avgRocketMiddleH))
-        self.avgRocketBottomC = str(round(self.Scores.avgRocketBottomC))
-        self.avgRocketBottomH = str(round(self.Scores.avgRocketBottomH))
-        self.avgCargoShipC = str(round(self.Scores.avgCargoShipC))
-        self.avgCargoShipH = str(round(self.Scores.avgCargoShipH))
+        self.pAutoCrossLine = str(round(self.Info.pAutoCrossLine)) + "%"
+        self.pAutoDoesntMove = str(round(self.Info.pAutoDoesntMove)) + "%"
+        self.pAutoIntake = str(round(self.Info.pAutoIntake)) + "%"
+        self.pAutoNoShow = str(round(self.Info.pAutoNoShow)) + "%"
+        self.pTeleRotation = str(round(self.Info.pTeleRotation)) + "%"
+        self.pTelePosition = str(round(self.Info.pTelePosition)) + "%"
+        self.pTeleHangSuccess = str(round(self.Info.pTeleHangSucess)) + "%"
+        self.pTeleHangAttempt = str(round(self.Info.pTeleHangAttempt)) + "%"
+        self.pTeleHangNA = str(round(self.Info.pTeleHangNA)) + "%"
+        self.pTeleAssist = str(round(self.Info.pTeleAssist)) + "%"
+        self.pTeleAssisted = str(round(self.Info.pTeleAssisted)) + "%"
+        self.pTeleDefenseNone = str(round(self.Info.pTeleDefenseNone)) + "%"
+        self.pTeleDefenseSome = str(round(self.Info.pTeleDefenseSome)) + "%"
+        self.pTeleDefenseAll = str(round(self.Info.pTeleDefenseAll)) + "%"
+        self.pTeleDefenseGood = str(round(self.Info.pTeleDefenseGood)) + "%"
+        self.pTeleDefenseBad = str(round(self.Info.pTeleDefenseBad)) + "%"
+        self.pTeleDefenseOk = str(round(self.Info.pTeleDefenseOk)) + "%"
+        self.pTeleDefenseNA = str(round(self.Info.pTeleDefenseNA)) + "%"
 
     def getAttr(self, source):
         return getattr(self, source)

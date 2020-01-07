@@ -27,13 +27,6 @@ def calculate_data():
 
     for team in Team.team_list:
         team.get_primary_details()
-        rocketTopC = (float(team.Scores.avgRocketTopC)/4)*3.0
-        rocketTopH = (float(team.Scores.avgRocketTopH)/4)*2.0
-        rocketMiddleC = (float(team.Scores.avgRocketMiddleC)/4)*3.0
-        rocketMiddleH = (float(team.Scores.avgRocketMiddleH)/4)*2.0
-        rocketBottomC = (float(team.Scores.avgRocketBottomC)/4)*3.0
-        rocketBottomH = (float(team.Scores.avgRocketBottomH)/4)*2.0
-        cargoShipC = (float(team.Scores.avgCargoShipC)/4)*3.0
         cargoShipH = (float(team.Scores.avgCargoShipH)/4)*2.0
 
         team.totalWS = str(round(float(team.totalWS)+(rocketTopC+rocketTopH+rocketMiddleC+rocketMiddleH+rocketBottomC+rocketBottomH+cargoShipC+cargoShipH), 2))
@@ -78,108 +71,53 @@ def assign_pit_entry_values(team, entry):
 #   -- calculates rankings for avg, min, and max scores for each team
 #------------------------------------------------------------------------------
 
-def get_rocketTopC_rank(sort="avg", rev=True):
-    TeamRankings.rocketTopC_rank = []
+def get_autoTopPCell_rank(sort="avg", rev=True):
+    TeamRankings.autoTopPCell_rank = []
     for team in Team.team_list:
         if sort == "avg":
-            TeamRankings.rocketTopC_rank.append([team.Scores.avgRocketTopC, team.number])
+            TeamRankings.autoTopPCell_rank.append([team.Scores.avgAutoTopPCell, team.number])
         elif sort == "max":
-            TeamRankings.rocketTopC_rank.append([team.Scores.maxRocketTopC, team.number])
+            TeamRankings.autoTopPCell_rank.append([team.Scores.maxAutoTopPCell, team.number])
         elif sort == "min":
-            TeamRankings.rocketTopC_rank.append([team.Scores.minRocketTopC, team.number])
-    TeamRankings.rocketTopC_rank.sort(reverse=rev)
-    return TeamRankings.rocketTopC_rank
+            TeamRankings.autoTopPCell_rank.append([team.Scores.minAutoTopPCell, team.number])
+    TeamRankings.autoTopPCell_rank.sort(reverse=rev)
+    return TeamRankings.autoTopPCell_rank
 
-
-def get_rocketTopH_rank(sort="avg", rev=True):
-    TeamRankings.rocketTopH_rank = []
+def get_autoBottomPCell_rank(sort="avg", rev=True):
+    TeamRankings.autoBottomPCell_rank = []
     for team in Team.team_list:
         if sort == "avg":
-            TeamRankings.rocketTopH_rank.append([team.Scores.avgRocketTopH, team.number])
+            TeamRankings.autoBottomPCell_rank.append([team.Scores.avgAutoBottomPCell, team.number])
         elif sort == "max":
-            TeamRankings.rocketTopH_rank.append([team.Scores.maxRocketTopH, team.number])
+            TeamRankings.autoBottomPCell_rank.append([team.Scores.maxAutoBottomPCell, team.number])
         elif sort == "min":
-            TeamRankings.rocketTopH_rank.append([team.Scores.minRocketTopH, team.number])
-    TeamRankings.rocketTopH_rank.sort(reverse=rev)
-    return TeamRankings.rocketTopH_rank
+            TeamRankings.autoBottomPCell_rank.append([team.Scores.minAutoBottomPCell, team.number])
+    TeamRankings.autoBottomPCell_rank.sort(reverse=rev)
+    return TeamRankings.autoBottomPCell_rank
 
-
-def get_rocketMiddleC_rank(sort="avg", rev=True):
-    TeamRankings.rocketMiddleC_rank = []
+def get_teleTopPC_rank(sort="avg", rev=True):
+    TeamRankings.teleTopPC_rank = []
     for team in Team.team_list:
         if sort == "avg":
-            TeamRankings.rocketMiddleC_rank.append([team.Scores.avgRocketMiddleC, team.number])
+            TeamRankings.teleTopPC_rank.append([team.Scores.avgTeleTopPC, team.number])
         elif sort == "max":
-            TeamRankings.rocketMiddleC_rank.append([team.Scores.maxRocketMiddleC, team.number])
+            TeamRankings.teleTopPC_rank.append([team.Scores.maxTeleTopPC, team.number])
         elif sort == "min":
-            TeamRankings.rocketMiddleC_rank.append([team.Scores.minRocketMiddleC, team.number])
-    TeamRankings.rocketMiddleC_rank.sort(reverse=rev)
-    return TeamRankings.rocketMiddleC_rank
+            TeamRankings.teleTopPC_rank.append([team.Scores.minTeleTopPC, team.number])
+    TeamRankings.teleTopPC_rank.sort(reverse=rev)
+    return TeamRankings.teleTopPC_rank
 
-
-def get_rocketMiddleH_rank(sort="avg", rev=True):
-    TeamRankings.rocketMiddleH_rank = []
+def get_teleBottomPC_rank(sort="avg", rev=True):
+    TeamRankings.teleBottomPC_rank = []
     for team in Team.team_list:
         if sort == "avg":
-            TeamRankings.rocketMiddleH_rank.append([team.Scores.avgRocketMiddleH, team.number])
+            TeamRankings.teleBottomPC_rank.append([team.Scores.avgTeleBottomPC, team.number])
         elif sort == "max":
-            TeamRankings.rocketMiddleH_rank.append([team.Scores.maxRocketMiddleH, team.number])
+            TeamRankings.teleBottomPC_rank.append([team.Scores.maxTeleBottomPC, team.number])
         elif sort == "min":
-            TeamRankings.rocketMiddleH_rank.append([team.Scores.minRocketMiddleH, team.number])
-    TeamRankings.rocketMiddleH_rank.sort(reverse=rev)
-    return TeamRankings.rocketMiddleH_rank
-
-
-def get_rocketBottomC_rank(sort="avg", rev=True):
-    TeamRankings.rocketBottomC_rank = []
-    for team in Team.team_list:
-        if sort == "avg":
-            TeamRankings.rocketBottomC_rank.append([team.Scores.avgRocketBottomC, team.number])
-        elif sort == "max":
-            TeamRankings.rocketBottomC_rank.append([team.Scores.maxRocketBottomC, team.number])
-        elif sort == "min":
-            TeamRankings.rocketBottomC_rank.append([team.Scores.minRocketBottomC, team.number])
-    TeamRankings.rocketBottomC_rank.sort(reverse=rev)
-    return TeamRankings.rocketBottomC_rank
-
-
-def get_rocketBottomH_rank(sort="avg", rev=True):
-    TeamRankings.rocketBottomH_rank = []
-    for team in Team.team_list:
-        if sort == "avg":
-            TeamRankings.rocketBottomH_rank.append([team.Scores.avgRocketBottomH, team.number])
-        elif sort == "max":
-            TeamRankings.rocketBottomH_rank.append([team.Scores.maxRocketBottomH, team.number])
-        elif sort == "min":
-            TeamRankings.rocketBottomH_rank.append([team.Scores.minRocketBottomH, team.number])
-    TeamRankings.rocketBottomH_rank.sort(reverse=rev)
-    return TeamRankings.rocketBottomH_rank
-
-
-def get_cargoShipC_rank(sort="avg", rev=True):
-    TeamRankings.cargoShipC_rank = []
-    for team in Team.team_list:
-        if sort == "avg":
-            TeamRankings.cargoShipC_rank.append([team.Scores.avgCargoShipC, team.number])
-        elif sort == "max":
-            TeamRankings.cargoShipC_rank.append([team.Scores.maxCargoShipC, team.number])
-        elif sort == "min":
-            TeamRankings.cargoShipC_rank.append([team.Scores.minCargoShipC, team.number])
-    TeamRankings.cargoShipC_rank.sort(reverse=rev)
-    return TeamRankings.cargoShipC_rank
-
-
-def get_cargoShipH_rank(sort="avg", rev=True):
-    TeamRankings.cargoShipH_rank = []
-    for team in Team.team_list:
-        if sort == "avg":
-            TeamRankings.cargoShipH_rank.append([team.Scores.avgCargoShipH, team.number])
-        elif sort == "max":
-            TeamRankings.cargoShipH_rank.append([team.Scores.maxCargoShipH, team.number])
-        elif sort == "min":
-            TeamRankings.cargoShipH_rank.append([team.Scores.minCargoShipH, team.number])
-    TeamRankings.cargoShipH_rank.sort(reverse=rev)
-    return TeamRankings.cargoShipH_rank
+            TeamRankings.teleBottomPC_rank.append([team.Scores.minTeleBottomPC, team.number])
+    TeamRankings.teleBottomPC_rank.sort(reverse=rev)
+    return TeamRankings.teleBottomPC_rank
 
 
 #------------------------------------------------------------------------------

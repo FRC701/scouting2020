@@ -90,6 +90,17 @@ public class AutoFragment extends Fragment {
         stat.setTeamNum(mTeamNum);
         int nS = (noShowAuto.isChecked() ? 1 : 0);
         stat.setHadAuto(nS);
+        stat.setTopPCellAuto(topPCA);
+        stat.setBottomPCellAuto(bottomPCA);
+        int CLA = (crossLineAuto.isChecked() ? 1:  0);
+        stat.setCrossLineAuto(CLA);
+        int DMA = (doesntMoveAuto.isChecked() ? 1: 0);
+        stat.setDoesntMoveAuto(DMA);
+        int IA = (intakeAuto.isChecked() ? 1: 0);
+        stat.setIntakeAuto(IA);
+        int NSA = (noShowAuto.isChecked() ? 1:0 );
+        stat.setNoShowAuto(NSA);
+
         return stat;
     }
 
