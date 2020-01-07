@@ -91,17 +91,17 @@ public class PitScoutingActivity extends AppCompatActivity {
             }
         });
 
-        intakeAndMech = (EditText)findViewById(R.id.mechanismAnswer);
-        driveTrain = (EditText)findViewById(R.id.driveTrainAnswer);
-        speed = (EditText)findViewById(R.id.speedAnswer);
-        lang = (EditText)findViewById(R.id.programmingLanguageAnswer);
-        comments = (EditText)findViewById(R.id.commentsAnswer);
-        driverExperience = (EditText)findViewById(R.id.driverExperience);
-        coDriverExperience = (EditText)findViewById(R.id.coDriverExperience);
-        climb = (EditText)findViewById(R.id.climbTime);
-        auto = (CheckBox)findViewById(R.id.pitAuto_Cb);
-        scoreBottom = (CheckBox) findViewById(R.id.scoreBottom_Cb);
-        scoreTop = (CheckBox) findViewById(R.id.scoreTop_Cb);
+//        intakeAndMech = (EditText)findViewById(R.id.mechanismAnswer);
+//        driveTrain = (EditText)findViewById(R.id.driveTrainAnswer);
+//        speed = (EditText)findViewById(R.id.speedAnswer);
+//        lang = (EditText)findViewById(R.id.programmingLanguageAnswer);
+//        comments = (EditText)findViewById(R.id.commentsAnswer);
+//        driverExperience = (EditText)findViewById(R.id.driverExperience);
+//        coDriverExperience = (EditText)findViewById(R.id.coDriverExperience);
+//        climb = (EditText)findViewById(R.id.climbTime);
+//        auto = (CheckBox)findViewById(R.id.pitAuto_Cb);
+//        scoreBottom = (CheckBox) findViewById(R.id.scoreBottom_Cb);
+//        scoreTop = (CheckBox) findViewById(R.id.scoreTop_Cb);
 
     }
 

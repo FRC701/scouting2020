@@ -21,11 +21,10 @@ import com.vandenrobotics.saga.tools.ExternalStorageTools;
 
 //import com.vandenrobotics.saga2018.adapters.MatchPagerAdapter;
 
-public class MatchActivity extends FragmentActivity implements DialogListener{
+public class MatchActivity extends FragmentActivity {
 
     private FragmentTabHost mTabHost;
     private AutoFragment mInitFrag;
-    private MidMatchFragment mAutoFrag;
     private TeleFragment mTeleFrag;
 
     public String mEvent;
@@ -79,11 +78,9 @@ public class MatchActivity extends FragmentActivity implements DialogListener{
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
         mTabHost.addTab(mTabHost.newTabSpec("tab_pre")
-                .setIndicator(getResources().getString(R.string.title_preTab), null), AutoFragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("tab_mid")
-                .setIndicator(getResources().getString(R.string.title_midTab), null), MidMatchFragment.class, null);
+                .setIndicator(getResources().getString(R.string.auto_title), null), AutoFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("tab_post")
-                .setIndicator(getResources().getString(R.string.title_postTab), null), TeleFragment.class, null);
+                .setIndicator(getResources().getString(R.string.tele_title), null), TeleFragment.class, null);
     }
 
     private void setupInfoBar() {
@@ -116,31 +113,6 @@ public class MatchActivity extends FragmentActivity implements DialogListener{
         //mInitFrag.command_noShow(view);
     }
 
-    @Override
-    public void onDialogPositiveClick(android.support.v4.app.DialogFragment dialog) {
-        if (!dialog.equals(null)) {
-            if (mInitFrag != null) {
-                if (dialog.equals(mInitFrag.noShowDF)) {
-                    mInitFrag.setNoShow(true);
-                    // save all data and close the match
-                    this.finishViaNoShow();
-                }
-            }
-
-
-        }
-    }
-
-    @Override
-    public void onDialogNegativeClick(android.support.v4.app.DialogFragment dialog) {
-        if (!dialog.equals(null)) {
-            if (mInitFrag != null) {
-                if (dialog.equals(mInitFrag.noShowDF)) {
-                    mInitFrag.setNoShow(false);
-                }
-            }
-        }
-    }
 
     public void finishMatch(View view) {
 //        getSupportFragmentManager().findFragmentByTag("tab_post").onPause();

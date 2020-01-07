@@ -179,6 +179,8 @@
     <string name="control_panel">Control Panel</string>
     <string name="remove_power_cell">Remove power cell</string>
     <string name="_0">0</string>
+    <string name="auto_title">Auto</string>
+    <string name="tele_title">Tele</string>
     <string name="bottom_power_cell">Bottom Power Cell</string>
     <string name="top_power_cell">Top Power Cell</string>
     <string name="yearsDiverInDiveTeam">How many years has you Driver had experience on the Drive team?</string>

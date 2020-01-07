@@ -59,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/remove_power_cell"
+                android:id="@+id/teleRemovePC"
                 android:textColor="@color/DarkGreen"
                 />
             <TextView
@@ -107,12 +108,7 @@
                     android:textColor="@color/DarkGreen"
                     android:id="@+id/teleHangNA"/>
             </RadioGroup>
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/assist"
-                android:textColor="@color/Red"
-                android:id="@+id/teleHangAssist"/>
+
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,6 +116,12 @@
                 android:textColor="@color/Red"
                 android:id="@+id/teleHangAssisted"/>
 
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Assist"
+                android:id="@+id/teleHangAssist"
+                android:textColor="@color/Red"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,10 +189,11 @@
                 android:text="@string/foul"
                 android:textColor="@color/OrangeRed"
                 />
+
             <com.vandenrobotics.saga.views.NumberPicker
                 android:id="@+id/foul_Np"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="45dp">
 
             </com.vandenrobotics.saga.views.NumberPicker>
 
@@ -199,10 +202,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tech_foul"
                 android:textColor="@color/OrangeRed"/>
+
             <com.vandenrobotics.saga.views.NumberPicker
                 android:id="@+id/techFoul_Np"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="45dp">
 
             </com.vandenrobotics.saga.views.NumberPicker>
             <CheckBox
@@ -219,6 +223,8 @@
                 android:id="@+id/redCard_Cb"
                 android:text="@string/CheckBox_redCard"
                 />
+
+
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

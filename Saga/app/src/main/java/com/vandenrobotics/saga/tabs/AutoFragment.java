@@ -90,8 +90,6 @@ public class AutoFragment extends Fragment {
         stat.setTeamNum(mTeamNum);
         int nS = (noShowAuto.isChecked() ? 1 : 0);
         stat.setHadAuto(nS);
-        String sS = (ssComments_Et.getText().toString());
-        stat.setSscomments(sS);
         return stat;
     }
 
@@ -105,7 +103,6 @@ public class AutoFragment extends Fragment {
     private void loadData() {
         Stats stats = statsRepo.getAuto(mEvent, mMatchNum, mMatchPos);
         noShowAuto.setChecked(stats.getNoShow() == 1);
-        ssComments_Et.setText(stats.getSsComments());
     }
     private void assignViews(View view) {
         try {

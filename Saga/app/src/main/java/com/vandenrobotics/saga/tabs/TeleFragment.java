@@ -1,6 +1,7 @@
 package com.vandenrobotics.saga.tabs;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -30,13 +31,33 @@ public class TeleFragment extends Fragment {
     private NumberPicker techFoul_Np;
     private CheckBox redCard_Cb;
     private CheckBox yellowCard_Cb;
-    private EditText climbStart;
+    private EditText teleComments;
+
+    private Button teleTopPC_btn;
+    private Button teleBottomPC_btn;
+    private CheckBox teleRemovePC;
+    private CheckBox teleRotation;
+    private CheckBox telePosition;
+    private RadioButton teleHangSuccess;
+    private RadioButton teleHangAttempt;
+    private RadioButton teleHangNA;
+    private CheckBox teleAssist;
+    private CheckBox teleAssisted;
+    private RadioButton teleDefenseNone;
+    private RadioButton teleDefenseSome;
+    private RadioButton teleDefenseAll;
+    private RadioButton teleDefenseGood;
+    private RadioButton teleDefenseBad;
+    private RadioButton teleDefenseOk;
+    private RadioButton teleDefenseNA;
 
     private String mEvent;
     private int mMatchNum;
     private int mTeamNum;
     private int mMatchPos;
     private String mAlliance;
+    private int topPCA;
+    private int bottomPCA;
 
     private StatsRepo statsRepo;
 
@@ -114,13 +135,56 @@ public class TeleFragment extends Fragment {
             techFoul_Np = (NumberPicker) view.findViewById(R.id.techFoul_Np);
             redCard_Cb = (CheckBox) view.findViewById(R.id.redCard_Cb);
             yellowCard_Cb = (CheckBox) view.findViewById(R.id.yellowCard_Cb);
-
+            teleComments = (EditText) view.findViewById(R.id.teleComments);
+            teleTopPC_btn = (Button) view.findViewById(R.id.teleTopPC);
+            teleBottomPC_btn = (Button) view.findViewById(R.id.teleBottomPC);
+            teleRemovePC = (CheckBox) view.findViewById(R.id.teleRemovePC);
+            teleRotation = (CheckBox) view.findViewById(R.id.teleRotation);
+            telePosition = (CheckBox) view.findViewById(R.id.telePosition);
+            teleHangSuccess = (RadioButton) view.findViewById(R.id.teleHangSuccess);
+            teleHangAttempt = (RadioButton) view.findViewById(R.id.teleHangAttempt);
+            teleHangNA = (RadioButton) view.findViewById(R.id.teleHangNA);
+            teleAssist = (CheckBox) view.findViewById(R.id.teleHangAssist);
+            teleAssisted = (CheckBox) view.findViewById(R.id.teleHangAssisted);
+            teleDefenseNone = (RadioButton) view.findViewById(R.id.teleDefenseNone);
+            teleDefenseSome = (RadioButton) view.findViewById(R.id.teleDefenseSome);
+            teleDefenseAll = (RadioButton) view.findViewById(R.id.teleDefenseAll);
+            teleDefenseGood = (RadioButton) view.findViewById(R.id.teleDefenseGood);
+            teleDefenseBad = (RadioButton) view.findViewById(R.id.teleDefenseBad);
+            teleDefenseOk = (RadioButton) view.findViewById(R.id.teleDefenseOk);
+            teleDefenseNA = (RadioButton) view.findViewById(R.id.teleDefenseNa);
 
             viewAssigned = true;
        }catch(Exception e){
            e.printStackTrace();
            viewAssigned = false;
        }
+
+    }
+    public class OnClickPC implements Button.OnClickListener{
+        @Override
+        public void onClick (View view){
+            switch (view.getId()){
+                case R.id.teleTopPC:
+                    if(teleRemovePC.isChecked()&& topPCA >0){
+                        topPCA--;
+                    }
+                    else {
+                        topPCA++;
+                    }
+                    teleBottomPC_btn.setText(topPCA);
+                    break;
+                case R.id. bottomPCellAuto:
+                    if(teleRemovePC.isChecked()&& bottomPCA >0){
+                        bottomPCA--;
+                    }
+                    else {
+                        bottomPCA++;
+                    }
+                    teleBottomPC_btn.setTag(bottomPCA);
+                    break;
+            }
+        }
 
     }
 
