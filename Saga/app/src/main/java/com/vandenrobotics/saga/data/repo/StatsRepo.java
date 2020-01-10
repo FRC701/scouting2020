@@ -32,18 +32,34 @@ public class StatsRepo {
                 + Stats.KEY_TeamNum + " INTEGER not null , "
                 //Makes sure the match position is between 1 and 6 for each tablet
                 + Stats.KEY_MatchPosition + " INTEGER not null CHECK ( " + Stats.KEY_MatchPosition + " BETWEEN 1 AND 6 ), "
+                + Stats.KEY_TopPCellAuto + " INTEGER , "
+                + Stats.KEY_BottomPCellAuto + " INTEGER , "
+                + Stats.KEY_CrossLineAuto + " INTEGER , "
+                + Stats.KEY_DoesntMoveAuto + " INTEGER , "
+                + Stats.KEY_IntakeAuto + " INTEGER , "
+                + Stats.KEY_NoShowAuto + " INTEGER , "
+                + Stats.KEY_TeleComments + "TEXT ,"
+                + Stats.KEY_TeleTopPC + "INTEGER , "
+                + Stats.KEY_TeleBottomPC + "INTEGER , "
+                + Stats.KEY_TeleRotation + "INTEGER , "
+                + Stats.KEY_TelePosition + "INTEGER , "
+                + Stats.KEY_TeleHangSuccess  + "INTEGER , "
+                + Stats.KEY_TeleHangAttempt + "INTEGER , "
+                + Stats.KEY_TeleHangNA + "INTEGER , "
+                + Stats.KEY_TeleAssist + "INTEGER , "
+                + Stats.KEY_TeleAssisted + "INTEGER , "
+                + Stats.KEY_TeleDefenseNone + "INTEGER , "
+                + Stats.KEY_TeleDefenseSome + "INTEGER , "
+                + Stats.KEY_TeleDefenseAll + "INTEGER , "
+                + Stats.KEY_TeleDefenseGood + "INTEGER , "
+                + Stats.KEY_TeleDefenseBad + "INTEGER , "
+                + Stats.KEY_TeleDefenseOk + "INTEGER , "
+                + Stats.KEY_TeleDefenseNA + "INTEGER ,"
                 + Stats.KEY_NoShow + " INTEGER , "
                 + Stats.KEY_RobotDisabled + " INTEGER , "
                 + Stats.KEY_RedCard + " INTEGER , "
                 + Stats.KEY_YellowCard + " INTEGER , "
                 + Stats.KEY_Fouls + " INTEGER , "
-                + Stats.KEY_topPCellAuto + " INTEGER , "
-                + Stats.KEY_bottomPCellAuto + " INTEGER , "
-                + Stats.KEY_removeBallsAuto + " INTEGER , "
-                + Stats.KEY_crossLineAuto + " INTEGER , "
-                + Stats.KEY_doesntMoveAuto + " INTEGER , "
-                + Stats.KEY_intakeAuto + " INTEGER , "
-                + Stats.KEY_noShowAuto + " INTEGER , "
                 + Stats.KEY_TechFouls + " INTEGER , "+
                 //makes the CompId, MatchNum and MatchPos Primary Key so there needs
                 //to be a unique combination of these attributes in each row in the Stats table
@@ -83,13 +99,29 @@ public class StatsRepo {
         values.put(Stats.KEY_YellowCard, stats.getYellowCard());
         values.put(Stats.KEY_Fouls, stats.getFoul());
         values.put(Stats.KEY_TechFouls, stats.getTechFoul());
-        values.put(Stats.KEY_topPCellAuto, stats.getTopPCellAuto());
-        values.put(Stats.KEY_bottomPCellAuto, stats.getBottomPCellAuto());
-        values.put(Stats.KEY_removeBallsAuto, stats.getRemoveBallsAuto());
-        values.put(Stats.KEY_crossLineAuto, stats.getCrossLineAuto());
-        values.put(Stats.KEY_doesntMoveAuto, stats.getDoesntMoveAuto());
-        values.put(Stats.KEY_intakeAuto, stats.getIntakeAuto());
-        values.put(Stats.KEY_noShowAuto, stats.getNoShowAuto());
+        values.put(Stats.KEY_TopPCellAuto, stats.getTopPCellAuto());
+        values.put(Stats.KEY_BottomPCellAuto, stats.getBottomPCellAuto());
+        values.put(Stats.KEY_CrossLineAuto, stats.getCrossLineAuto());
+        values.put(Stats.KEY_DoesntMoveAuto, stats.getDoesntMoveAuto());
+        values.put(Stats.KEY_IntakeAuto, stats.getIntakeAuto());
+        values.put(Stats.KEY_NoShowAuto, stats.getNoShowAuto());
+        values.put(Stats.KEY_TeleComments, stats.getTeleComments());
+        values.put(Stats.KEY_TeleTopPC, stats.getTeleTopPC());
+        values.put(Stats.KEY_TeleBottomPC, stats.getTeleBottomPC());
+        values.put(Stats.KEY_TeleRotation, stats.getTeleRotation());
+        values.put(Stats.KEY_TelePosition, stats.getTelePosition());
+        values.put(Stats.KEY_TeleHangSuccess, stats.getTeleHangSuccess());
+        values.put(Stats.KEY_TeleHangAttempt, stats.getTeleHangAttempt());
+        values.put(Stats.KEY_TeleHangNA, stats.getTeleHangNA());
+        values.put(Stats.KEY_TeleAssist, stats.getTeleHangAssist());
+        values.put(Stats.KEY_TeleAssisted, stats.getTeleHangAssisted());
+        values.put(Stats.KEY_TeleDefenseNone, stats.getTeleDefenseNone());
+        values.put(Stats.KEY_TeleDefenseSome, stats.getTeleDefenseSome());
+        values.put(Stats.KEY_TeleDefenseAll, stats.getTeleDefenseAll());
+        values.put(Stats.KEY_TeleDefenseGood, stats.getTeleDefenseGood());
+        values.put(Stats.KEY_TeleDefenseBad, stats.getTeleDefenseBad());
+        values.put(Stats.KEY_TeleDefenseOk, stats.getTeleDefenseOk());
+        values.put(Stats.KEY_TeleDefenseNA, stats.getTeleDefenseNA());
 
         //check if there is a conflict. It should return -1 if there is a copy of the exact combination of the Primary Keys
         statsId=(int)db.insertWithOnConflict(Stats.TABLE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
@@ -139,13 +171,12 @@ public class StatsRepo {
         ContentValues values = new ContentValues();
         Log.d("StatsRepo auto", "team id " + stats.getTeamNum());
         values.put(Stats.KEY_NoShow, stats.getNoShow());
-        values.put(Stats.KEY_topPCellAuto, stats.getTopPCellAuto());
-        values.put(Stats.KEY_bottomPCellAuto, stats.getBottomPCellAuto());
-        values.put(Stats.KEY_removeBallsAuto, stats.getRemoveBallsAuto());
-        values.put(Stats.KEY_crossLineAuto, stats.getCrossLineAuto());
-        values.put(Stats.KEY_doesntMoveAuto, stats.getDoesntMoveAuto());
-        values.put(Stats.KEY_intakeAuto, stats.getIntakeAuto());
-        values.put(Stats.KEY_noShowAuto, stats.getNoShowAuto());
+        values.put(Stats.KEY_TopPCellAuto, stats.getTopPCellAuto());
+        values.put(Stats.KEY_BottomPCellAuto, stats.getBottomPCellAuto());
+        values.put(Stats.KEY_CrossLineAuto, stats.getCrossLineAuto());
+        values.put(Stats.KEY_DoesntMoveAuto, stats.getDoesntMoveAuto());
+        values.put(Stats.KEY_IntakeAuto, stats.getIntakeAuto());
+        values.put(Stats.KEY_NoShowAuto, stats.getNoShowAuto());
 
         int row = db.update(Stats.TABLE, values, Stats.KEY_CompId + " =  '" + stats.getCompId() + "' AND "
                 + Stats.KEY_MatchNum + " = " + stats.getMatchNum() + " AND "
@@ -165,6 +196,24 @@ public class StatsRepo {
         values.put(Stats.KEY_YellowCard, stats.getYellowCard());
         values.put(Stats.KEY_Fouls, stats.getFoul());
         values.put(Stats.KEY_TechFouls, stats.getTechFoul());
+        values.put(Stats.KEY_TeleComments, stats.getTeleComments());
+        values.put(Stats.KEY_TeleTopPC, stats.getTeleTopPC());
+        values.put(Stats.KEY_TeleBottomPC, stats.getTeleBottomPC());
+        values.put(Stats.KEY_TeleRotation, stats.getTeleRotation());
+        values.put(Stats.KEY_TelePosition, stats.getTelePosition());
+        values.put(Stats.KEY_TeleHangSuccess, stats.getTeleHangSuccess());
+        values.put(Stats.KEY_TeleHangAttempt, stats.getTeleHangAttempt());
+        values.put(Stats.KEY_TeleHangNA, stats.getTeleHangNA());
+        values.put(Stats.KEY_TeleAssist, stats.getTeleHangAssist());
+        values.put(Stats.KEY_TeleAssisted, stats.getTeleHangAssisted());
+        values.put(Stats.KEY_TeleDefenseNone, stats.getTeleDefenseNone());
+        values.put(Stats.KEY_TeleDefenseSome, stats.getTeleDefenseSome());
+        values.put(Stats.KEY_TeleDefenseAll, stats.getTeleDefenseAll());
+        values.put(Stats.KEY_TeleDefenseGood, stats.getTeleDefenseGood());
+        values.put(Stats.KEY_TeleDefenseBad, stats.getTeleDefenseBad());
+        values.put(Stats.KEY_TeleDefenseOk, stats.getTeleDefenseOk());
+        values.put(Stats.KEY_TeleDefenseNA, stats.getTeleDefenseNA());
+
         Log.d("StatsRepo", "updating table"+values.toString());
         try {
             db.update(Stats.TABLE, values, Stats.KEY_CompId + " =  \"" + stats.getCompId() + "\" AND "
@@ -190,13 +239,12 @@ public class StatsRepo {
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         //makes the selection query for the stats table to get the auto stats
         String selectQuery = " SELECT Stats." + Stats.KEY_NoShow
-                + ", Stats." + Stats.KEY_topPCellAuto
-                + ", Stats." + Stats.KEY_bottomPCellAuto
-                + ", Stats." + Stats.KEY_removeBallsAuto
-                + ", Stats." + Stats.KEY_crossLineAuto
-                + ", Stats." + Stats.KEY_doesntMoveAuto
-                + ", Stats." + Stats.KEY_intakeAuto
-                + ", Stats." + Stats.KEY_noShowAuto
+                + ", Stats." + Stats.KEY_TopPCellAuto
+                + ", Stats." + Stats.KEY_BottomPCellAuto
+                + ", Stats." + Stats.KEY_CrossLineAuto
+                + ", Stats." + Stats.KEY_DoesntMoveAuto
+                + ", Stats." + Stats.KEY_IntakeAuto
+                + ", Stats." + Stats.KEY_NoShowAuto
                 + " FROM " + Stats.TABLE
                 + " WHERE Stats." + Stats.KEY_CompId + " = \"" + event + "\""
                 + " AND Stats." + Stats.KEY_MatchNum + " = " + match
@@ -208,13 +256,12 @@ public class StatsRepo {
         //gets the first row that matches the specifications from the selection query
         if (cursor.moveToFirst()){
             stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_NoShow)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_topPCellAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_bottomPCellAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_removeBallsAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_crossLineAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_doesntMoveAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_intakeAuto)));
-            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_noShowAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_TopPCellAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_BottomPCellAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_CrossLineAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_DoesntMoveAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_IntakeAuto)));
+            stats.setNoShow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_NoShowAuto)));
         }
 
         cursor.close();
@@ -229,11 +276,28 @@ public class StatsRepo {
         //makes the selection query for the stats table to get the tele stats
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         String selectQuery = " SELECT Stats." + Stats.KEY_RobotDisabled
+
                 + ", Stats." + Stats.KEY_RedCard
                 + ", Stats." + Stats.KEY_YellowCard
                 + ", Stats." + Stats.KEY_Fouls
                 + ", Stats." + Stats.KEY_TechFouls
-                + ", Stats." + Stats.KEY_ClimbTime
+                + ", Stats." + Stats.KEY_TeleComments
+                + ", Stats." + Stats.KEY_TeleTopPC
+                + ", Stats." + Stats.KEY_TeleBottomPC
+                + ", Stats." + Stats.KEY_TeleRotation
+                + ", Stats." + Stats.KEY_TelePosition
+                + ", Stats." + Stats.KEY_TeleHangSuccess
+                + ", Stats." + Stats.KEY_TeleHangAttempt
+                + ", Stats." + Stats.KEY_TeleHangNA
+                + ", Stats." + Stats.KEY_TeleAssist
+                + ", Stats." + Stats.KEY_TeleAssisted
+                + ", Stats." + Stats.KEY_TeleDefenseNone
+                + ", Stats." + Stats.KEY_TeleDefenseSome
+                + ", Stats." + Stats.KEY_TeleDefenseAll
+                + ", Stats." + Stats.KEY_TeleDefenseGood
+                + ", Stats." + Stats.KEY_TeleDefenseBad
+                + ", Stats." + Stats.KEY_TeleDefenseOk
+                + ", Stats." + Stats.KEY_TeleDefenseNA
                 + " FROM " + Stats.TABLE
                 + " WHERE Stats." + Stats.KEY_CompId + " = \"" + event + "\""
                 + " AND Stats." + Stats.KEY_MatchNum + " = " + match
