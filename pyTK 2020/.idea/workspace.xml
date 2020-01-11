@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a01cf454-5174-414d-93d1-3d71fe25c063" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,6 +157,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="676" y="0" width="697" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.04866562" />
