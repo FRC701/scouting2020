@@ -113,7 +113,14 @@ public class AutoFragment extends Fragment {
 
     private void loadData() {
         Stats stats = statsRepo.getAuto(mEvent, mMatchNum, mMatchPos);
-        noShowAuto.setChecked(stats.getNoShow() == 1);
+        crossLineAuto.setChecked(stats.getCrossLineAuto() == 1);
+        doesntMoveAuto.setChecked(stats.getDoesntMoveAuto() == 1);
+        intakeAuto.setChecked(stats.getIntakeAuto() == 1);
+        noShowAuto.setChecked(stats.getNoShowAuto() == 1);
+        topPCellAuto.setText(stats.getTopPCellAuto());
+        topPCA = stats.getTopPCellAuto();
+        bottomPCellAuto.setText(stats.getBottomPCellAuto());
+        bottomPCA = stats.getBottomPCellAuto();
     }
     private void assignViews(View view) {
         try {
