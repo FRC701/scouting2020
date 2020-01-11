@@ -28,7 +28,8 @@
             android:layout_weight="1"
             android:text="@string/topPCellAuto"
             android:backgroundTint="@color/Goldish"
-            android:id="@+id/topPCellAuto"/>
+            android:id="@+id/topPCellAuto"
+            android:onClick="OnClickPCA"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

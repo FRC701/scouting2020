@@ -34,6 +34,7 @@ public class AutoFragment extends Fragment {
 
     private StatsRepo statsRepo;
 
+    private OnClickPCA onClickPCA;
     private String mEvent;
     private int mMatchNum;
     private int mTeamNum;
@@ -133,6 +134,7 @@ public class AutoFragment extends Fragment {
             noShowAuto = (CheckBox) view.findViewById(R.id.noShowAuto);
             teleopAuto = (Button) view.findViewById(R.id.teleopAuto);
 
+            topPCellAuto.setOnClickListener(onClickPCA);
 
             viewsAssigned = true;
         } catch (Exception e) {
@@ -140,7 +142,7 @@ public class AutoFragment extends Fragment {
             viewsAssigned = false;
         }
     }
-     public class OnClickPC implements Button.OnClickListener{
+     public class OnClickPCA implements Button.OnClickListener{
             @Override
             public void onClick (View view){
                 switch (view.getId()){
