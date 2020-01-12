@@ -29,7 +29,8 @@
             android:layout_weight="1"
             android:id="@+id/teleTopPC"
             android:backgroundTint="@color/Goldish"
-            android:text="@string/_0" />
+            android:text="@string/_0"
+            android:onClick="OnClickPC"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,7 +46,8 @@
             android:text="@string/_0"
             android:id="@+id/teleBottomPC"
             android:backgroundTint="@color/Goldish"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="OnClickPC"/>
     </LinearLayout>
     <android.support.v7.widget.ScrollingTabContainerView.TabView
         android:layout_width="match_parent"

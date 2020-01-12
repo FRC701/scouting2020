@@ -51,6 +51,7 @@ public class TeleFragment extends Fragment {
     private RadioButton teleDefenseOk;
     private RadioButton teleDefenseNA;
 
+    private OnClickPC onClickPC;
     private String mEvent;
     private int mMatchNum;
     private int mTeamNum;
@@ -99,6 +100,9 @@ public class TeleFragment extends Fragment {
         stats.setCompId(mEvent);
         stats.setMatchNum(mMatchNum);
         stats.setTeamNum(mTeamNum);
+        stats.setTeleTopPC(topPCA);
+        stats.setTeleComments(teleComments.getText().toString());
+        stats.setTeleBottomPC(bottomPCA);
         int disabled = (disabled_Cb.isChecked() ? 1 : 0);
         stats.setDisabled(disabled);
         int rC = (redCard_Cb.isChecked() ? 1 : 0);
@@ -109,6 +113,34 @@ public class TeleFragment extends Fragment {
         stats.setFoul(foul);
         int techFoul = (techFoul_Np.getValue());
         stats.setTechFoul(techFoul);
+        int tR = (teleRotation.isChecked() ? 1:0);
+        stats.setTeleRotation(tR);
+        int tP = (telePosition.isChecked() ? 1:0);
+        stats.setTeleRotation(tP);
+        int tHS = (teleHangSuccess.isChecked() ? 1:0);
+        stats.setTeleHangSuccess(tHS);
+        int tHA = (teleHangAttempt.isChecked() ? 1:0);
+        stats.setTeleHangAttempt(tHA);
+        int tHNA = (teleHangNA.isChecked() ? 1:0);
+        stats.setTeleHangNA(tHNA);
+        int tA = (teleAssist.isChecked() ? 1:0);
+        stats.setTeleHangAttempt(tA);
+        int tAed = (teleAssisted.isChecked() ? 1:0);
+        stats.setTeleHangAssisted(tAed);
+        int tDN = (teleDefenseNone.isChecked() ? 1:0);
+        stats.setTeleDefenseNone(tDN);
+        int tDS = (teleDefenseSome.isChecked() ? 1:0);
+        stats.setTeleDefenseSome(tDS);
+        int tDA = (teleDefenseAll.isChecked() ? 1:0);
+        stats.setTeleDefenseAll(tDA);
+        int tDG = (teleDefenseGood.isChecked() ? 1:0);
+        stats.setTeleDefenseGood(tDG);
+        int tDB = (teleDefenseBad.isChecked() ? 1:0);
+        stats.setTeleDefenseBad(tDB);
+        int tDO = (teleDefenseOk.isChecked() ? 1:0);
+        stats.setTeleDefenseOk(tDO);
+        int tDNA = (teleDefenseNA.isChecked() ? 1:0);
+        stats.setTeleDefenseNA(tDNA);
         Log.d("TeleFrag saveData", "team id " + stats.getTeamNum());
         return stats;
     }
@@ -126,6 +158,25 @@ public class TeleFragment extends Fragment {
         yellowCard_Cb.setChecked(stats.getYellowCard() == 1);
         foul_Np.setValue(stats.getFoul());
         techFoul_Np.setValue(stats.getTechFoul());
+        teleTopPC_btn.setText(stats.getTeleTopPC());
+        topPCA = stats.getTeleTopPC();
+        teleBottomPC_btn.setText(stats.getTeleBottomPC());
+        bottomPCA = stats.getTeleBottomPC();
+        teleRotation.setChecked(stats.getTeleRotation() == 1);
+        telePosition.setChecked(stats.getTelePosition() == 1);
+        teleHangSuccess.setChecked(stats.getTeleHangSuccess() == 1);
+        teleHangAttempt.setChecked(stats.getTeleHangAttempt() == 1);
+        teleHangNA.setChecked(stats.getTeleHangNA() == 1);
+        teleAssist.setChecked(stats.getTeleHangAssist() == 1);
+        teleAssisted.setChecked(stats.getTeleHangAssisted() == 1);
+        teleDefenseNone.setChecked(stats.getTeleDefenseNone() == 1);
+        teleDefenseSome.setChecked(stats.getTeleDefenseSome() == 1);
+        teleDefenseAll.setChecked(stats.getTeleDefenseAll() == 1);
+        teleDefenseGood.setChecked(stats.getTeleDefenseGood() == 1);
+        teleDefenseBad.setChecked(stats.getTeleDefenseBad() == 1);
+        teleDefenseOk.setChecked(stats.getTeleDefenseOk() == 1);
+        teleDefenseNA.setChecked(stats.getTeleDefenseNA() == 1);
+        teleComments.setText(stats.getTeleComments());
 
     }
     public void assignViews(View view){
@@ -154,6 +205,9 @@ public class TeleFragment extends Fragment {
             teleDefenseOk = (RadioButton) view.findViewById(R.id.teleDefenseOk);
             teleDefenseNA = (RadioButton) view.findViewById(R.id.teleDefenseNa);
 
+            teleTopPC_btn.setOnClickListener(onClickPC);
+            teleBottomPC_btn.setOnClickListener(onClickPC);
+
             viewAssigned = true;
        }catch(Exception e){
            e.printStackTrace();
@@ -172,7 +226,7 @@ public class TeleFragment extends Fragment {
                     else {
                         topPCA++;
                     }
-                    teleBottomPC_btn.setText(topPCA);
+                    teleTopPC_btn.setText(topPCA);
                     break;
                 case R.id. bottomPCellAuto:
                     if(teleRemovePC.isChecked()&& bottomPCA >0){
