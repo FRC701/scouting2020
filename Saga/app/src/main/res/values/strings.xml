@@ -224,4 +224,11 @@
     <string name="intakeMechanismQuestion">Intake Mechanism</string>
     <string name="intakeMechanismAnswer" />
     <string name="action_durning_auto">Action Durning Auto</string>
+    <string name="driveTrainQuestion">Drive Train</string>
+    <string name="speedQuestion">Speed</string>
+    <string name="programmingLanguageQuestion">Programming Language</string>
+    <string name="initiationLineAuto">Cross the initiation line</string>
+    <string name="intakeBallsAuto">Intake balls from the ground</string>
+    <string name="scoreInLowerAuto">Score in lower port</string>
+    <string name="scoreInOuterAuto">Score in outer port</string>
 </resources>
