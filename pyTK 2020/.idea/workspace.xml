@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a01cf454-5174-414d-93d1-3d71fe25c063" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a01cf454-5174-414d-93d1-3d71fe25c063" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -156,8 +154,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="676" y="0" width="697" height="735" extended-state="1" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.04866562" />
