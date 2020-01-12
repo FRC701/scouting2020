@@ -88,12 +88,6 @@
             android:textColor="@color/DarkGreen"
             android:id="@+id/noShowAuto"
             />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/teleopAuto"
-            android:textColor="@color/Black"
-            android:id="@+id/teleopAuto"/>
 
     </LinearLayout>
 

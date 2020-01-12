@@ -135,6 +135,7 @@ public class AutoFragment extends Fragment {
             teleopAuto = (Button) view.findViewById(R.id.teleopAuto);
 
             topPCellAuto.setOnClickListener(onClickPCA);
+            bottomPCellAuto.setOnClickListener(onClickPCA);
 
             viewsAssigned = true;
         } catch (Exception e) {

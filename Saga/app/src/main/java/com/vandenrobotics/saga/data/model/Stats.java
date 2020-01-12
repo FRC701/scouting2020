@@ -25,7 +25,6 @@ public class Stats {
     public static final String KEY_NoShowAuto = "NoShowAuto";
 
     //teleop
-    public static final String KEY_NoShow = "NoShow";
     public static final String KEY_RobotDisabled = "RobotDisabled";
     public static final String KEY_RedCard = "RedCard";
     public static final String KEY_YellowCard = "YellowCard";
@@ -54,7 +53,6 @@ public class Stats {
     private int matchNum;
     private int teamNum;
     private int matchPos;
-    private int noShow;
     private int hadAuto;
     private int redCard;
     private int yellowCard;
@@ -93,7 +91,6 @@ public class Stats {
         matchNum = 0;
         teamNum = 0;
         matchPos = 0;
-        noShow = 0;
         hadAuto = 0;
         redCard = 0;
         yellowCard = 0;
@@ -152,13 +149,6 @@ public class Stats {
     }
     public void setMatchPos(int i){
         matchPos = i;
-    }
-
-    public int getNoShow(){
-        return noShow;
-    }
-    public void setNoShow(int i){
-        noShow = i;
     }
 
     public int getHadAuto(){
