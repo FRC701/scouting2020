@@ -35,7 +35,7 @@
                 android:layout_height="match_parent" >
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/pit_autoYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -43,7 +43,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/pit_autoNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -58,14 +58,44 @@
                     android:text="@string/actionDuringAutoQuestion"
                     android:textColor="@color/Red"/>
 
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="408dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="@string/answerAutoAction" />
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/pit_autoInitiationLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/initiationLineAuto"
+                        android:textColor="@color/MediumBlue"/>
+
+                    <CheckBox
+                        android:id="@+id/pit_autoIntakeBalls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/intakeBallsAuto"
+                        android:textColor="@color/MediumBlue"/>
+
+                    <CheckBox
+                        android:id="@+id/pit_autoScoreLower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/scoreInLowerAuto"
+                        android:textColor="@color/MediumBlue"/>
+
+                    <CheckBox
+                        android:id="@+id/pit_autoScoreOuter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/scoreInOuterAuto"
+                        android:textColor="@color/MediumBlue"/>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView6"
@@ -82,7 +112,7 @@
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/pit_firstStage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -90,7 +120,7 @@
                         android:textColor="@color/MediumBlue"/>
 
                     <CheckBox
-                        android:id="@+id/checkBox2"
+                        android:id="@+id/pit_secondStage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -98,7 +128,7 @@
                         android:textColor="@color/MediumBlue"/>
 
                     <CheckBox
-                        android:id="@+id/checkBox3"
+                        android:id="@+id/pit_thirdStage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -120,7 +150,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox4"
+                    android:id="@+id/pit_scoreBottomPort"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -128,7 +158,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox5"
+                    android:id="@+id/pit_scoreOuterPort"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -136,7 +166,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox6"
+                    android:id="@+id/pit_scoreInnerPort"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -157,7 +187,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox7"
+                    android:id="@+id/pit_positionControlPanel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -165,7 +195,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox8"
+                    android:id="@+id/pit_rotateControlPanel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -186,7 +216,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox9"
+                    android:id="@+id/pit_assistClimb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -194,7 +224,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox10"
+                    android:id="@+id/pit_parkRobot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -202,7 +232,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox11"
+                    android:id="@+id/pit_climbRobot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -223,7 +253,7 @@
                 android:layout_height="match_parent" >
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/pit_intakePowerCellsYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -231,7 +261,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/pit_intakePowerCellsNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -251,7 +281,7 @@
                 android:layout_height="match_parent" >
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/pit_defenseYes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -259,7 +289,7 @@
                     android:textColor="@color/MediumBlue"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/pit_defenseNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -275,58 +305,61 @@
                 android:textColor="@color/Red"/>
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/pit_intakeMechanism"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
-                android:hint="intake mechanism"/>
+                android:hint="Intake mechanism"/>
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Drive Train"
+                android:text="@string/driveTrainQuestion"
                 android:textColor="@color/Red"/>
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/pit_driveTrain"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="" />
+                android:text=""
+                android:hint="Drive Train"/>
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Speed"
+                android:text="@string/speedQuestion"
                 android:textColor="@color/Red"/>
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/pit_speed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="" />
+                android:text=""
+                android:hint="Speed"/>
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Programming Language"
+                android:text="@string/programmingLanguageQuestion"
                 android:textColor="@color/Red"/>
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/pit_programmingLanguage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="" />
+                android:text=""
+                android:hint="Programming Language"/>
 
 
         </LinearLayout>
