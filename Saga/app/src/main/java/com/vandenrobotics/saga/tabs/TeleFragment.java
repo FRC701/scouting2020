@@ -57,8 +57,8 @@ public class TeleFragment extends Fragment {
     private int mTeamNum;
     private int mMatchPos;
     private String mAlliance;
-    private int topPCA;
-    private int bottomPCA;
+    private int topPCT;
+    private int bottomPCT;
 
     private StatsRepo statsRepo;
 
@@ -100,9 +100,9 @@ public class TeleFragment extends Fragment {
         stats.setCompId(mEvent);
         stats.setMatchNum(mMatchNum);
         stats.setTeamNum(mTeamNum);
-        stats.setTeleTopPC(topPCA);
+        stats.setTeleTopPC(topPCT);
         stats.setTeleComments(teleComments.getText().toString());
-        stats.setTeleBottomPC(bottomPCA);
+        stats.setTeleBottomPC(bottomPCT);
         int disabled = (disabled_Cb.isChecked() ? 1 : 0);
         stats.setDisabled(disabled);
         int rC = (redCard_Cb.isChecked() ? 1 : 0);
@@ -158,10 +158,9 @@ public class TeleFragment extends Fragment {
         yellowCard_Cb.setChecked(stats.getYellowCard() == 1);
         foul_Np.setValue(stats.getFoul());
         techFoul_Np.setValue(stats.getTechFoul());
-        teleTopPC_btn.setText(stats.getTeleTopPC());
-        topPCA = stats.getTeleTopPC();
-        teleBottomPC_btn.setText(stats.getTeleBottomPC());
-        bottomPCA = stats.getTeleBottomPC();
+        topPCT = stats.getTeleTopPC();
+
+        bottomPCT = stats.getTeleBottomPC();
         teleRotation.setChecked(stats.getTeleRotation() == 1);
         telePosition.setChecked(stats.getTelePosition() == 1);
         teleHangSuccess.setChecked(stats.getTeleHangSuccess() == 1);
@@ -205,8 +204,17 @@ public class TeleFragment extends Fragment {
             teleDefenseOk = (RadioButton) view.findViewById(R.id.teleDefenseOk);
             teleDefenseNA = (RadioButton) view.findViewById(R.id.teleDefenseNa);
 
+            onClickPC = new TeleFragment.OnClickPC();
             teleTopPC_btn.setOnClickListener(onClickPC);
             teleBottomPC_btn.setOnClickListener(onClickPC);
+
+            //setting data
+            if (topPCT > 0){
+                teleTopPC_btn.setText(topPCT + "");
+            }
+            if(bottomPCT > 0){
+                teleBottomPC_btn.setText(bottomPCT + "");
+            }
 
             viewAssigned = true;
        }catch(Exception e){
@@ -218,24 +226,27 @@ public class TeleFragment extends Fragment {
     public class OnClickPC implements Button.OnClickListener{
         @Override
         public void onClick (View view){
+            System.out.println("button clicked");
             switch (view.getId()){
                 case R.id.teleTopPC:
-                    if(teleRemovePC.isChecked()&& topPCA >0){
-                        topPCA--;
+                    if(teleRemovePC.isChecked()&& topPCT > 0){
+                        topPCT--;
                     }
-                    else {
-                        topPCA++;
+                    else{
+                        topPCT++;
                     }
-                    teleTopPC_btn.setText(topPCA);
+                    teleTopPC_btn.setText( topPCT+"");
+                    System.out.println("top pct :" + topPCT);
                     break;
-                case R.id. bottomPCellAuto:
-                    if(teleRemovePC.isChecked()&& bottomPCA >0){
-                        bottomPCA--;
+                case R.id.teleBottomPC:
+                    if(teleRemovePC.isChecked()&& bottomPCT > 0){
+                        bottomPCT--;
                     }
-                    else {
-                        bottomPCA++;
+                    else{
+                        bottomPCT++;
                     }
-                    teleBottomPC_btn.setTag(bottomPCA);
+                    teleBottomPC_btn.setText( bottomPCT +"");
+                    System.out.println("bottom pct :" +bottomPCT);
                     break;
             }
         }

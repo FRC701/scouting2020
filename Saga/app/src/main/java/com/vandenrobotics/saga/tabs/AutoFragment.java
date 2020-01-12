@@ -29,7 +29,6 @@ public class AutoFragment extends Fragment {
     private CheckBox doesntMoveAuto;
     private CheckBox intakeAuto;
     private CheckBox noShowAuto;
-    private Button teleopAuto;
     private EditText ssComments_Et;
 
     private StatsRepo statsRepo;
@@ -118,9 +117,7 @@ public class AutoFragment extends Fragment {
         doesntMoveAuto.setChecked(stats.getDoesntMoveAuto() == 1);
         intakeAuto.setChecked(stats.getIntakeAuto() == 1);
         noShowAuto.setChecked(stats.getNoShowAuto() == 1);
-        topPCellAuto.setText(stats.getTopPCellAuto());
         topPCA = stats.getTopPCellAuto();
-        bottomPCellAuto.setText(stats.getBottomPCellAuto());
         bottomPCA = stats.getBottomPCellAuto();
     }
     private void assignViews(View view) {
@@ -132,10 +129,17 @@ public class AutoFragment extends Fragment {
             doesntMoveAuto = (CheckBox) view.findViewById(R.id.doesntMoveAuto);
             intakeAuto = (CheckBox) view.findViewById(R.id.intakeAuto);
             noShowAuto = (CheckBox) view.findViewById(R.id.noShowAuto);
-            teleopAuto = (Button) view.findViewById(R.id.teleopAuto);
 
+            onClickPCA = new AutoFragment.OnClickPCA();
             topPCellAuto.setOnClickListener(onClickPCA);
             bottomPCellAuto.setOnClickListener(onClickPCA);
+
+            if(topPCA > 0){
+                topPCellAuto.setText(topPCA + "");
+            }
+            if(bottomPCA > 0){
+                bottomPCellAuto.setText(bottomPCA + "");
+            }
 
             viewsAssigned = true;
         } catch (Exception e) {
@@ -146,24 +150,27 @@ public class AutoFragment extends Fragment {
      public class OnClickPCA implements Button.OnClickListener{
             @Override
             public void onClick (View view){
+                System.out.println("button clicked");
                 switch (view.getId()){
                     case R.id.topPCellAuto:
-                        if(removeballsAuto.isChecked()&& topPCA >0){
+                        if(removeballsAuto.isChecked()&& topPCA > 0){
                             topPCA--;
                         }
-                        else {
+                        else{
                             topPCA++;
                         }
-                        topPCellAuto.setText(topPCA);
+                        topPCellAuto.setText(topPCA+"");
+                        System.out.println("top pca :" + topPCA);
                         break;
                     case R.id. bottomPCellAuto:
-                        if(removeballsAuto.isChecked()&& bottomPCA >0){
+                        if(removeballsAuto.isChecked()&& bottomPCA > 0){
                             bottomPCA--;
                         }
-                        else {
+                        else{
                             bottomPCA++;
                         }
-                        bottomPCellAuto.setTag(bottomPCA);
+                        bottomPCellAuto.setText(bottomPCA +"");
+                        System.out.println("bottom pct :" + bottomPCA);
                         break;
                 }
             }

@@ -199,9 +199,6 @@ public class Stats {
     public int getBottomPCellAuto () { return bottomPCellAuto; }
     public void setBottomPCellAuto (int i) { bottomPCellAuto = i; }
 
-    public int getRemoveBallsAuto () {return removeBallsAuto; }
-    public void setRemoveBallsAuto (int i) { removeBallsAuto = i; }
-
     public int getCrossLineAuto () {return crossLineAuto; }
     public void setCrossLineAuto (int i) { crossLineAuto = i; }
 

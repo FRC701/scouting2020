@@ -27,9 +27,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/topPCellAuto"
-            android:backgroundTint="@color/Goldish"
-            android:id="@+id/topPCellAuto"
-            android:onClick="OnClickPCA"/>
+            android:background="@color/Goldish"
+            android:id="@+id/topPCellAuto"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -43,10 +42,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/bottomPCellAuto"
-            android:backgroundTint="@color/Goldish"
+            android:background="@color/Goldish"
             android:layout_weight="1"
-            android:id="@+id/bottomPCellAuto"
-            tools:targetApi="lollipop" />
+            android:id="@+id/bottomPCellAuto"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
