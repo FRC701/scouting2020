@@ -213,6 +213,7 @@ public class PitDataRepo {
             pitData.setRobotClimbClimb(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotClimbClimb)));
             pitData.setDuringClimbAssist(cursor.getInt(cursor.getColumnIndex(PitData.KEY_DuringClimbAssist)));
             pitData.setIntakePowerCellsYes(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakePowerCellsYes)));
+            pitData.setIntakePowerCellsNo(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakePowerCellsNo)));
             pitData.setRobotDefenseYesPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseYesPit)));
             pitData.setRobotDefenseNoPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseNoPit)));
         }
