@@ -30,6 +30,7 @@
             android:id="@+id/teleTopPC"
             android:background="@color/Goldish"
             android:text="@string/_0"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
