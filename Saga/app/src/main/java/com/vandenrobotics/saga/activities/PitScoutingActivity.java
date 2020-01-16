@@ -27,9 +27,6 @@ public class PitScoutingActivity extends AppCompatActivity {
     private EditText driveTrain;
     private EditText speed;
     private EditText lang;
-    private EditText comments;
-    private EditText driverExperience;
-    private EditText coDriverExperience;
     private EditText climb;
     private CheckBox auto;
     private CheckBox scoreBottom;
@@ -111,9 +108,6 @@ public class PitScoutingActivity extends AppCompatActivity {
        pitdata.setDriveTrain(driveTrain.getText().toString());
        pitdata.setSpeed(speed.getText().toString());
        pitdata.setLang(lang.getText().toString());
-       pitdata.setComments(comments.getText().toString());
-       pitdata.setDriverExperience(driverExperience.getText().toString());
-       pitdata.setCoDriverExperience(coDriverExperience.getText().toString());
        pitdata.setClimb(climb.getText().toString());
 
        int a = (auto.isChecked() ? 1:0);
@@ -139,9 +133,6 @@ public class PitScoutingActivity extends AppCompatActivity {
         driveTrain.setText(pitData.getDriveTrain());
         speed.setText(pitData.getSpeed());
         lang.setText(pitData.getLang());
-        comments.setText(pitData.getComments());
-        driverExperience.setText(pitData.getDriverExperience());
-        coDriverExperience.setText(pitData.getCoDriverExperience());
         climb.setText(pitData.getClimb());
         auto.setChecked(pitData.getAuto() == 1);
         scoreBottom.setChecked(pitData.getScoreBottom() == 1);
