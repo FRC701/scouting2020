@@ -63,6 +63,13 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Button" />
+
                     <CheckBox
                         android:id="@+id/pit_autoInitiationLine"
                         android:layout_width="wrap_content"
@@ -359,6 +366,13 @@
                 android:inputType="textPersonName"
                 android:text=""
                 android:hint="Programming Language"/>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/saveButton"
+                android:onClick="save"/>
 
 
         </LinearLayout>

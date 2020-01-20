@@ -231,4 +231,5 @@
     <string name="intakeBallsAuto">Intake balls from the ground</string>
     <string name="scoreInLowerAuto">Score in lower port</string>
     <string name="scoreInOuterAuto">Score in outer port</string>
+    <string name="saveButton">Save</string>
 </resources>

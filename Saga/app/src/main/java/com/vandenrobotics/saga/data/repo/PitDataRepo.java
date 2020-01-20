@@ -183,6 +183,7 @@ public class PitDataRepo {
                 + ", PitData." + PitData.KEY_IntakePowerCellsNo
                 + ", PitData." + PitData.KEY_RobotDefenseYesPit
                 + ", PitData." + PitData.KEY_RobotDefenseNoPit
+
                 + " FROM " + PitData.TABLE
                 + " WHERE PitData." + PitData.KEY_TeamNum + " = " + teamNum;
         Cursor cursor = db.rawQuery(selectQuery, null);
