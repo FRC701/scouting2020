@@ -38,7 +38,6 @@ public class PitData {
     public static final String KEY_IntakePowerCellsNo = "PowerCellIntakeNoPit";
     public static final String KEY_RobotDefenseYesPit = "DefenseRobotYesPit";
     public static final String KEY_RobotDefenseNoPit = "DefenseRobotNoPit";
-
     //i did everything after here
     public static final String KEY_Auto = "Auto";
     public static final String KEY_ScoreBottom = "ScoreBottom";
@@ -115,7 +114,6 @@ public class PitData {
         intakePowerCellsNo = 0;
         robotDefenseYesPit = 0;
         robotDefenseNoPit = 0;
-
 
     }
 
@@ -234,7 +232,6 @@ public class PitData {
 
     public int getRobotDefenseNoPit() {return robotDefenseNoPit ; }
     public void setRobotDefenseNoPit (int b) {robotDefenseNoPit = b; }
-
 
 }
 
