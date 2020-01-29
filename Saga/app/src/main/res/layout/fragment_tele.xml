@@ -123,6 +123,47 @@
                 android:text="Assist"
                 android:id="@+id/teleHangAssist"
                 android:textColor="@color/Red"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hang Speed"
+                android:textColor="@color/MediumBlue"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/climbTimeFast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/climbSpeedFast"
+                    android:textColor="@color/DarkGreen"/>
+
+                <RadioButton
+                    android:id="@+id/climbTimeMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/climbSpeedMedium"
+                    android:textColor="@color/DarkGreen"/>
+
+                <RadioButton
+                    android:id="@+id/climbTimeLow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/climbSpeedSlow"
+                    android:textColor="@color/DarkGreen"/>
+
+                <RadioButton
+                    android:id="@+id/climbTimeNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/climbSpeedNo"
+                    android:textColor="@color/DarkGreen"/>
+            </RadioGroup>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

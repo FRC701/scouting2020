@@ -48,6 +48,11 @@ public class Stats {
     public static final String KEY_TeleDefenseBad = "TeleDefenseBad";
     public static final String KEY_TeleDefenseOk = "TeleDefenseOk";
     public static final String KEY_TeleDefenseNA = "TeleDefenseNA";
+    public static final String KEY_ClimbSpeedFast = "ClimbSpeedFast";
+    public static final String KEY_ClimbSpeedMedium = "ClimbSpeedMedium";
+    public static final String KEY_ClimbSpeedSlow = "ClimbSpeedSlow";
+    public static final String KEY_ClimbSpeedNo = "ClimbSpeedNo";
+
 
     private String compId;
     private int matchNum;
@@ -76,6 +81,10 @@ public class Stats {
     private int teleDefenseBad;
     private int teleDefenseOk;
     private int teleDefenseNA;
+    private int climbSpeedFast;
+    private int climbSpeedMedium;
+    private int climbSpeedSlow;
+    private int climbSpeedNo;
 
     //auto
     private int topPCellAuto;
@@ -120,6 +129,10 @@ public class Stats {
         teleDefenseBad = 0;
         teleDefenseOk = 0;
         teleDefenseNA = 0;
+        climbSpeedFast = 0;
+        climbSpeedMedium = 0;
+        climbSpeedSlow = 0;
+        climbSpeedNo = 0;
 
     }
 
@@ -263,6 +276,18 @@ public class Stats {
 
     public int getTeleDefenseNA () {return teleDefenseNA; }
     public void setTeleDefenseNA (int i){teleDefenseNA = i; }
+
+    public int getClimbSpeedFast () {return climbSpeedFast; }
+    public void setClimbSpeedFast (int i){climbSpeedFast = i; }
+
+    public int getClimbSpeedMedium () {return climbSpeedMedium; }
+    public void setClimbSpeedMedium (int i){climbSpeedMedium = i; }
+
+    public int getClimbSpeedSlow () {return climbSpeedSlow; }
+    public void setClimbSpeedSlow (int i){climbSpeedSlow = i; }
+
+    public int getClimbSpeedNo () {return climbSpeedNo; }
+    public void setClimbSpeedNo (int i){climbSpeedNo = i; }
 
 }
 

@@ -232,4 +232,16 @@
     <string name="scoreInLowerAuto">Score in lower port</string>
     <string name="scoreInOuterAuto">Score in outer port</string>
     <string name="saveButton">Save</string>
+    <string name="scoreInInnerAuto">Score in inner Port</string>
+    <string name="autoNumberOfBalls">Number of balls</string>
+    <string name="number_of_balls">Number of balls</string>
+    <string name="intake_mechanism">Intake mechanism</string>
+    <string name="climbSpeedFast">Fast</string>
+    <string name="climbSpeedMedium">Medium</string>
+    <string name="climbSpeedSlow">Slow</string>
+    <string name="climbSpeedNo">N/A</string>
+    <string name="BallsDuringAutoQuestion">How many power cells can your robot score during auto?</string>
+    <string name="scoringMechanism">Scoring Mechanism</string>
+    <string name="ballsDuringAuto">Auto number of balls</string>
+    <string name="scoringMechanismQuestion">What mechanism do you use to score during auto?</string>
 </resources>

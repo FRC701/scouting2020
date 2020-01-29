@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.vandenrobotics.saga.R;
@@ -27,6 +28,7 @@ public class AddEventDialogFragment extends DialogFragment {
     private EditText editTextCompId;
     private EditText editTextCompName;
     private EditText editTextCompDate;
+    private Button reset;
 
     private String compId  = "Default";
     private String compName = "Default";

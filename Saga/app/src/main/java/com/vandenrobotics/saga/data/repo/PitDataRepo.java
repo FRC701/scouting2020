@@ -25,6 +25,8 @@ public class PitDataRepo {
                 + PitData.KEY_DriveTrain + " TEXT , "
                 + PitData.KEY_Lang + " TEXT , "
                 + PitData.KEY_Speed + " TEXT , "
+                + PitData.KEY_ScoringMechanism + " TEXT , "
+                + PitData.KEY_BallsDuringAuto + " TEXT , "
                 + PitData.KEY_AutoYes + " INTEGER , "
                 + PitData.KEY_AutoNo + " INTEGER , "
                 + PitData.KEY_CrossLinePit + " INTEGER , "
@@ -46,7 +48,8 @@ public class PitDataRepo {
                 + PitData.KEY_IntakePowerCellsYes + " INTEGER , "
                 + PitData.KEY_IntakePowerCellsNo + " INTEGER , "
                 + PitData.KEY_RobotDefenseYesPit + " INTEGER , "
-                + PitData.KEY_RobotDefenseNoPit + " INTEGER ) ";
+                + PitData.KEY_RobotDefenseNoPit + " INTEGER , "
+                + PitData.KEY_ScoreInnerPortPit + " INTEGER ) ";
     }
 
     public int insert (PitData pitData){
@@ -58,6 +61,8 @@ public class PitDataRepo {
         values.put(PitData.KEY_DriveTrain, pitData.getDriveTrain());
         values.put(PitData.KEY_Lang, pitData.getLang());
         values.put(PitData.KEY_Speed, pitData.getSpeed());
+        values.put(PitData.KEY_ScoringMechanism, pitData.getScoringMechanism());
+        values.put(PitData.KEY_BallsDuringAuto, pitData.getBallsDuringAuto());
         values.put(PitData.KEY_Auto, pitData.getAuto());
         values.put(PitData.KEY_ScoreBottom, pitData.getScoreBottom());
         values.put(PitData.KEY_ScoreTop, pitData.getScoreTop());
@@ -83,6 +88,7 @@ public class PitDataRepo {
         values.put(PitData.KEY_IntakePowerCellsNo, pitData.getIntakePowerCellsNo());
         values.put(PitData.KEY_RobotDefenseYesPit, pitData.getRobotDefenseYesPit());
         values.put(PitData.KEY_RobotDefenseNoPit, pitData.getRobotDefenseNoPit());
+        values.put(PitData.KEY_ScoreInnerPortPit, pitData.getScoreInnerPortPit());
 
 
 
@@ -99,6 +105,8 @@ public class PitDataRepo {
         values.put(PitData.KEY_DriveTrain, pitData.getDriveTrain());
         values.put(PitData.KEY_Lang, pitData.getLang());
         values.put(PitData.KEY_Speed, pitData.getSpeed());
+        values.put(PitData.KEY_ScoringMechanism, pitData.getScoringMechanism());
+        values.put(PitData.KEY_BallsDuringAuto, pitData.getBallsDuringAuto());
         values.put(PitData.KEY_Auto, pitData.getAuto());
         values.put(PitData.KEY_ScoreBottom, pitData.getScoreBottom());
         values.put(PitData.KEY_ScoreTop, pitData.getScoreTop());
@@ -124,6 +132,7 @@ public class PitDataRepo {
         values.put(PitData.KEY_IntakePowerCellsNo, pitData.getIntakePowerCellsNo());
         values.put(PitData.KEY_RobotDefenseYesPit, pitData.getRobotDefenseYesPit());
         values.put(PitData.KEY_RobotDefenseNoPit, pitData.getRobotDefenseNoPit());
+        values.put(PitData.KEY_ScoreInnerPortPit, pitData.getScoreInnerPortPit());
 
 
         pitDataId = (int)db.update(PitData.TABLE, values, PitData.KEY_TeamNum + " = " + pitData.getTeamNum(),null);
@@ -158,6 +167,8 @@ public class PitDataRepo {
                 + ", PitData." + PitData.KEY_DriveTrain
                 + ", PitData." + PitData.KEY_Lang
                 + ", PitData." + PitData.KEY_Speed
+                + ", PitData." + PitData.KEY_ScoringMechanism
+                + ", PitData." + PitData.KEY_BallsDuringAuto
                 + ", PitData." + PitData.KEY_Auto
                 + ", PitData." + PitData.KEY_ScoreBottom
                 + ", PitData." + PitData.KEY_ScoreTop
@@ -183,6 +194,8 @@ public class PitDataRepo {
                 + ", PitData." + PitData.KEY_IntakePowerCellsNo
                 + ", PitData." + PitData.KEY_RobotDefenseYesPit
                 + ", PitData." + PitData.KEY_RobotDefenseNoPit
+                + ", PitData." + PitData.KEY_ScoreInnerPortPit
+
 
                 + " FROM " + PitData.TABLE
                 + " WHERE PitData." + PitData.KEY_TeamNum + " = " + teamNum;
@@ -193,6 +206,8 @@ public class PitDataRepo {
             pitData.setDriveTrain(cursor.getString(cursor.getColumnIndex(PitData.KEY_DriveTrain)));
             pitData.setLang(cursor.getString(cursor.getColumnIndex(PitData.KEY_Lang)));
             pitData.setSpeed(cursor.getString(cursor.getColumnIndex(PitData.KEY_Speed)));
+            pitData.setScoringMechanism(cursor.getString(cursor.getColumnIndex(PitData.KEY_ScoringMechanism)));
+            pitData.setBallsDuringAuto(cursor.getString(cursor.getColumnIndex(PitData.KEY_BallsDuringAuto)));
             pitData.setScoreBottom(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreBottom)));
             pitData.setScoreTop(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreTop)));
             pitData.setAutoNo(cursor.getInt(cursor.getColumnIndex(PitData.KEY_AutoNo)));
@@ -217,6 +232,9 @@ public class PitDataRepo {
             pitData.setIntakePowerCellsNo(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakePowerCellsNo)));
             pitData.setRobotDefenseYesPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseYesPit)));
             pitData.setRobotDefenseNoPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseNoPit)));
+            pitData.setRobotDefenseNoPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseNoPit)));
+            pitData.setRobotDefenseNoPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseNoPit)));
+            pitData.setScoreInnerPortPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreInnerPortPit)));
         }
         cursor.close();
         DatabaseManager.getInstance().closeDatabase();

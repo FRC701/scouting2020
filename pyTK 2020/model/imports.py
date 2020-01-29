@@ -41,10 +41,11 @@ def create_table():
               TeleAssisted INTEGER, TeleDefenseNone INTEGER,
               TeleDefenseSome INTEGER, TeleDefenseAll INTEGER,
               TeleDefenseGood INTEGER, TeleDefenseBad INTEGER, 
-              TeleDefenseOk INTEGER, TeleDefenseNA INTEGER,
-              NoShow INTEGER,  RobotDisabled INTEGER,
+              TeleDefenseOk INTEGER, TeleDefenseNA INTEGER, RobotDisabled INTEGER,
               RedCard INTEGER, YellowCard INTEGER, 
               Fouls INTEGER, TechFouls INTEGER,
+              ClimbSpeedFast INTEGER, ClimbSpeedMedium INTEGER, ClimbSpeedSlow INTEGER,
+              ClimbSpeedNo INTEGER,
               PRIMARY KEY(MatchNumber, TeamNumber , MatchPosition));
     CREATE TABLE IF NOT EXISTS TeamsAll( TeamNumber INTEGER not null PRIMARY KEY, TeamName TEXT);
     CREATE TABLE IF NOT EXISTS Alliances( AllianceNum INTEGER not null PRIMARY KEY, TeamNum INTEGER);

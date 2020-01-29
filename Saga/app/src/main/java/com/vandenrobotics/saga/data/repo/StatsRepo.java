@@ -59,7 +59,12 @@ public class StatsRepo {
                 + Stats.KEY_RedCard + " INTEGER , "
                 + Stats.KEY_YellowCard + " INTEGER , "
                 + Stats.KEY_Fouls + " INTEGER , "
-                + Stats.KEY_TechFouls + " INTEGER , "+
+                + Stats.KEY_TechFouls + " INTEGER , "
+                + Stats.KEY_ClimbSpeedFast + " INTEGER , "
+                + Stats.KEY_ClimbSpeedMedium + " INTEGER , "
+                + Stats.KEY_ClimbSpeedSlow + " INTEGER , "
+                + Stats.KEY_ClimbSpeedNo + " INTEGER , "
+                +
                 //makes the CompId, MatchNum and MatchPos Primary Key so there needs
                 //to be a unique combination of these attributes in each row in the Stats table
                 "PRIMARY KEY ( '" + Stats.KEY_CompId
@@ -120,6 +125,10 @@ public class StatsRepo {
         values.put(Stats.KEY_TeleDefenseBad, stats.getTeleDefenseBad());
         values.put(Stats.KEY_TeleDefenseOk, stats.getTeleDefenseOk());
         values.put(Stats.KEY_TeleDefenseNA, stats.getTeleDefenseNA());
+        values.put(Stats.KEY_ClimbSpeedFast, stats.getClimbSpeedFast());
+        values.put(Stats.KEY_ClimbSpeedMedium, stats.getClimbSpeedMedium());
+        values.put(Stats.KEY_ClimbSpeedSlow, stats.getClimbSpeedSlow());
+        values.put(Stats.KEY_ClimbSpeedNo, stats.getClimbSpeedNo());
 
         //check if there is a conflict. It should return -1 if there is a copy of the exact combination of the Primary Keys
         statsId=(int)db.insertWithOnConflict(Stats.TABLE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
@@ -210,6 +219,10 @@ public class StatsRepo {
         values.put(Stats.KEY_TeleDefenseBad, stats.getTeleDefenseBad());
         values.put(Stats.KEY_TeleDefenseOk, stats.getTeleDefenseOk());
         values.put(Stats.KEY_TeleDefenseNA, stats.getTeleDefenseNA());
+        values.put(Stats.KEY_ClimbSpeedFast, stats.getClimbSpeedFast());
+        values.put(Stats.KEY_ClimbSpeedMedium, stats.getClimbSpeedMedium());
+        values.put(Stats.KEY_ClimbSpeedSlow, stats.getClimbSpeedSlow());
+        values.put(Stats.KEY_ClimbSpeedNo, stats.getClimbSpeedNo());
 
         Log.d("StatsRepo", "updating table"+values.toString());
         try {
@@ -292,6 +305,11 @@ public class StatsRepo {
                 + ", Stats." + Stats.KEY_TeleDefenseBad
                 + ", Stats." + Stats.KEY_TeleDefenseOk
                 + ", Stats." + Stats.KEY_TeleDefenseNA
+                + ", Stats." + Stats.KEY_ClimbSpeedFast
+                + ", Stats." + Stats.KEY_ClimbSpeedMedium
+                + ", Stats." + Stats.KEY_ClimbSpeedSlow
+                + ", Stats." + Stats.KEY_ClimbSpeedNo
+
                 + " FROM " + Stats.TABLE
                 + " WHERE Stats." + Stats.KEY_CompId + " = \"" + event + "\""
                 + " AND Stats." + Stats.KEY_MatchNum + " = " + match
@@ -324,6 +342,10 @@ public class StatsRepo {
             stats.setTeleDefenseBad(cursor.getInt(cursor.getColumnIndex(Stats.KEY_TeleDefenseBad)));
             stats.setTeleDefenseOk(cursor.getInt(cursor.getColumnIndex(Stats.KEY_TeleDefenseOk)));
             stats.setTeleDefenseNA(cursor.getInt(cursor.getColumnIndex(Stats.KEY_TeleDefenseNA)));
+            stats.setClimbSpeedFast(cursor.getInt(cursor.getColumnIndex(Stats.KEY_ClimbSpeedFast)));
+            stats.setClimbSpeedMedium(cursor.getInt(cursor.getColumnIndex(Stats.KEY_ClimbSpeedMedium)));
+            stats.setClimbSpeedSlow(cursor.getInt(cursor.getColumnIndex(Stats.KEY_ClimbSpeedSlow)));
+            stats.setClimbSpeedNo(cursor.getInt(cursor.getColumnIndex(Stats.KEY_ClimbSpeedNo)));
         }
 
         cursor.close();

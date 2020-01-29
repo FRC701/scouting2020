@@ -35,19 +35,19 @@
 
                 <RadioButton
                     android:id="@+id/pit_autoYes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/autoAnswerYes"
-                    android:textColor="@color/MediumBlue"/>
+                    android:textColor="@color/MediumBlue" />
 
                 <RadioButton
                     android:id="@+id/pit_autoNo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/autoAnswerNo"
-                    android:textColor="@color/MediumBlue"/>
+                    android:textColor="@color/MediumBlue" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -63,28 +63,28 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Button" />
-
                     <CheckBox
                         android:id="@+id/pit_autoInitiationLine"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/initiationLineAuto"
-                        android:textColor="@color/MediumBlue"/>
+                        android:textColor="@color/MediumBlue" />
 
                     <CheckBox
                         android:id="@+id/pit_autoIntakeBalls"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/intakeBallsAuto"
-                        android:textColor="@color/MediumBlue"/>
+                        android:textColor="@color/MediumBlue" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <CheckBox
                         android:id="@+id/pit_autoScoreLower"
@@ -92,24 +92,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/scoreInLowerAuto"
-                        android:textColor="@color/MediumBlue"/>
+                        android:textColor="@color/MediumBlue" />
 
                     <CheckBox
                         android:id="@+id/pit_autoScoreOuter"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="@string/scoreInOuterAuto"
-                        android:textColor="@color/MediumBlue"/>
+                        android:textColor="@color/MediumBlue" />
+
+
+
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/stagesRobotQuestion"
-                    android:textColor="@color/Red"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -118,28 +114,14 @@
                     android:orientation="horizontal">
 
                     <CheckBox
-                        android:id="@+id/pit_firstStage"
+                        android:id="@+id/pit_autoScoreInner"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/stage1Answer"
+                        android:text="@string/scoreInInnerAuto"
                         android:textColor="@color/MediumBlue"/>
 
-                    <CheckBox
-                        android:id="@+id/pit_secondStage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/stage2Answer"
-                        android:textColor="@color/MediumBlue"/>
 
-                    <CheckBox
-                        android:id="@+id/pit_thirdStage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/stage3Answer"
-                        android:textColor="@color/MediumBlue"/>
                 </LinearLayout>
             </RadioGroup>
 
@@ -260,7 +242,7 @@
 
                 <RadioButton
                     android:id="@+id/pit_intakePowerCellsYes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/intakePowerCellsYes"
@@ -268,7 +250,7 @@
 
                 <RadioButton
                     android:id="@+id/pit_intakePowerCellsNo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/intakePowerCellsNo"
@@ -288,7 +270,7 @@
 
                 <RadioButton
                     android:id="@+id/pit_defenseYes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/defenseYes"
@@ -296,7 +278,7 @@
 
                 <RadioButton
                     android:id="@+id/pit_defenseNo"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/defenseNO"
@@ -304,11 +286,41 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BallsDuringAutoQuestion"
+                android:textColor="@color/Red"/>
+
+            <EditText
+                android:id="@+id/pit_ballsDuringAuto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType=""
+                android:hint="@string/ballsDuringAuto"/>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/scoringMechanismQuestion" />
+
+            <EditText
+                android:id="@+id/pit_scoringMechanism"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:hint="@string/scoringMechanism"/>
+
+            <TextView
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/intakeMechanismQuestion"
-                android:textColor="@color/Red"/>
+                android:textColor="@color/Red" />
 
             <EditText
                 android:id="@+id/pit_intakeMechanism"
@@ -317,7 +329,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
-                android:hint="Intake mechanism"/>
+                android:hint="@string/intake_mechanism"/>
 
             <TextView
                 android:id="@+id/textView15"
@@ -366,6 +378,7 @@
                 android:inputType="textPersonName"
                 android:text=""
                 android:hint="Programming Language"/>
+
 
             <Button
                 android:id="@+id/saveButton"

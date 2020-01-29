@@ -16,15 +16,15 @@ public class PitData {
     public static final String KEY_DriveTrain = "TypeOfDriveTrain";
     public static final String KEY_Speed = "AverageSpeed";
     public static final String KEY_Lang = "ProgrammingLanguage";
+    public static final String KEY_ScoringMechanism = "ScoringMechanism";
+    public static final String KEY_BallsDuringAuto = "BallsDuringAuto";
     public static final String KEY_AutoYes = "AutoAnswerYes";
     public static final String KEY_AutoNo = "AutoAnswerNo";
     public static final String KEY_CrossLinePit = "AutoCrossLinePit";
     public static final String KEY_IntakeBallsPit = "AutoIntakeBallsPit";
     public static final String KEY_ScoreLowerPortPit = "AutoScoreLower";
     public static final String KEY_ScoreOuterPortPit = "AutoScoreOuter";
-    public static final String KEY_StageOnePit = "StageOnePit";
-    public static final String KEY_StageTwoPit = "StageTwoPit";
-    public static final String KEY_StageThreePit = "StageThreePit";
+    public static final String KEY_ScoreInnerPortPit = "AutoScoreInner";
     public static final String KEY_BottomPortScore = "ScoreBottomPort";
     public static final String KEY_OuterPortScore = "ScoreOuterPort";
     public static final String KEY_InnerPortScore = "ScoreInnerPort";
@@ -38,10 +38,13 @@ public class PitData {
     public static final String KEY_IntakePowerCellsNo = "PowerCellIntakeNoPit";
     public static final String KEY_RobotDefenseYesPit = "DefenseRobotYesPit";
     public static final String KEY_RobotDefenseNoPit = "DefenseRobotNoPit";
-    //i did everything after here
-    public static final String KEY_Auto = "Auto";
     public static final String KEY_ScoreBottom = "ScoreBottom";
     public static final String KEY_ScoreTop = "ScoreTop";
+    public static final String KEY_StageOnePit = "StageOnePit";
+    public static final String KEY_StageTwoPit = "StageTwoPit";
+    public static final String KEY_StageThreePit = "StageThreePit";
+    //i did everything after here
+    public static final String KEY_Auto = "Auto";
 
 
 
@@ -52,20 +55,17 @@ public class PitData {
     private String speed;
     private String lang;
     private String climb;
-
+    private String scoringMechanism;
+    private String ballsDuringAuto;
     //and after here
     private int auto;
-    private int scoreBottom;
-    private int scoreTop;
     private int autoNo;
     private int autoYes;
     private int crossLinePit;
     private int intakeBallsPit;
     private int scoreLowerPortPit;
     private int scoreOuterPortPit;
-    private int stageOnePit;
-    private int stageTwoPit;
-    private int stageThreePit;
+    private int scoreInnerPortPit;
     private int bottomPortScore;
     private int outerPortScore;
     private int innerPortScore;
@@ -79,6 +79,11 @@ public class PitData {
     private int intakePowerCellsNo;
     private int robotDefenseYesPit;
     private int robotDefenseNoPit;
+    private int scoreBottom;
+    private int scoreTop;
+    private int stageOnePit;
+    private int stageTwoPit;
+    private int stageThreePit;
 
 
 
@@ -89,18 +94,16 @@ public class PitData {
         driveTrain = "";
         lang = "";
         climb = "";
+        scoringMechanism = "";
+        ballsDuringAuto = "";
         auto = 0;
-        scoreBottom = 0;
-        scoreTop = 0;
         autoNo = 0;
         autoYes = 0;
         crossLinePit = 0;
         intakeBallsPit = 0;
         scoreLowerPortPit = 0;
         scoreOuterPortPit = 0;
-        stageOnePit = 0;
-        stageTwoPit = 0;
-        stageThreePit = 0;
+        scoreInnerPortPit = 0;
         bottomPortScore = 0;
         outerPortScore = 0;
         innerPortScore = 0;
@@ -114,6 +117,11 @@ public class PitData {
         intakePowerCellsNo = 0;
         robotDefenseYesPit = 0;
         robotDefenseNoPit = 0;
+        scoreBottom = 0;
+        scoreTop = 0;
+        stageOnePit = 0;
+        stageTwoPit = 0;
+        stageThreePit = 0;
 
     }
 
@@ -158,14 +166,18 @@ public class PitData {
     }
     public void setClimb(String s){ climb = s; }
 
+    public String getScoringMechanism(){
+        return scoringMechanism;
+    }
+    public void setScoringMechanism(String s){ scoringMechanism = s; }
+
+    public String getBallsDuringAuto(){
+        return ballsDuringAuto;
+    }
+    public void setBallsDuringAuto(String s){ ballsDuringAuto = s; }
+
     public int getAuto(){return auto; }
     public void setAuto(int b) { auto = b; }
-
-    public int getScoreBottom(){return scoreBottom ; }
-    public void setScoreBottom(int b) { scoreBottom = b; }
-
-    public int getScoreTop(){return scoreTop ; }
-    public void setScoreTop(int b) { scoreTop = b; }
 
     public int getAutoYes() {return autoYes ; }
     public void setAutoYes(int b) { autoYes = b; }
@@ -185,14 +197,8 @@ public class PitData {
     public int getScoreOuterPortPit() {return scoreOuterPortPit ; }
     public void setScoreOuterPortPit (int b) {scoreOuterPortPit = b; }
 
-    public int getStageOnePit() {return stageOnePit ; }
-    public void setStageOnePit (int b) {stageOnePit = b; }
-
-    public int getStageTwoPit() {return stageTwoPit ; }
-    public void setStageTwoPit (int b) {stageTwoPit = b; }
-
-    public int getStageThreePit() {return stageThreePit ; }
-    public void setStageThreePit (int b) {stageThreePit = b; }
+    public int getScoreInnerPortPit() {return scoreInnerPortPit ; }
+    public void setScoreInnerPortPit (int b) {scoreInnerPortPit = b; }
 
     public int getBottomPortScore() {return bottomPortScore ; }
     public void setBottomPortScore (int b) {bottomPortScore = b; }
@@ -232,6 +238,21 @@ public class PitData {
 
     public int getRobotDefenseNoPit() {return robotDefenseNoPit ; }
     public void setRobotDefenseNoPit (int b) {robotDefenseNoPit = b; }
+
+    public int getScoreBottom() {return scoreBottom ; }
+    public void setScoreBottom (int b) {scoreBottom = b; }
+
+    public int getScoreTop() {return scoreTop ; }
+    public void setScoreTop (int b) {scoreTop = b; }
+
+    public int getStageOnePit() {return stageOnePit ; }
+    public void setStageOnePit (int b) {stageOnePit = b; }
+
+    public int getStageTwoPit() {return stageTwoPit ; }
+    public void setStageTwoPit (int b) {stageTwoPit = b; }
+
+    public int getStageThreePit() {return stageThreePit ; }
+    public void setStageThreePit (int b) {stageThreePit = b; }
 
 }
 

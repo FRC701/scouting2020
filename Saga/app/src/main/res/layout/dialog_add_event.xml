@@ -54,4 +54,9 @@
         android:hint="Event Date: Year-Month-Day: XXXX-XX-XX"
         android:inputType="date"/>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

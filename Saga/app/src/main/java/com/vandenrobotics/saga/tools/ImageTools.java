@@ -64,11 +64,11 @@ public class ImageTools {
 
     // access the external storage to grab an image and load it into the provided image view under context
     public static void placeImage(Context context, int teamnumber, ImageView imageView){
-        Picasso.with(context)
-               .load(ExternalStorageTools.readImage(teamnumber))
-               .placeholder(R.drawable.nopic)
-               .error(R.drawable.nopic)
-               .into(imageView);
+        //Picasso.with(context)
+//               .load(ExternalStorageTools.readImage(teamnumber))
+//               .placeholder(R.drawable.nopic)
+//               .error(R.drawable.nopic)
+//               .into(imageView);
     }
 
     private static String getAbsoluteUrl(String relativeUrl){

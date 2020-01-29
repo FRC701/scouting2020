@@ -29,7 +29,7 @@ public class AddTeamDialogFragment extends DialogFragment {
     private EditText editTextTeamNum;
     private EditText editTextTeamName;
 
-    private int teamNum  = 0;
+    private int teamNum;
     private String teamName = "Default";
 
     private TeamsRepo teamsRepo;

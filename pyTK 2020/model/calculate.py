@@ -5,7 +5,7 @@
 import math
 #from statlib import *
 
-from scipy import stats
+# from scipy import stats
 
 from .team import TeamRankings
 from . import imports
@@ -27,9 +27,10 @@ def calculate_data():
 
     for team in Team.team_list:
         team.get_primary_details()
-        cargoShipH = (float(team.Scores.avgCargoShipH)/4)*2.0
+        topPCell = (float(team.Scores.avgTeleTopPC)/2.5)*2.0
 
-        team.totalWS = str(round(float(team.totalWS)+(rocketTopC+rocketTopH+rocketMiddleC+rocketMiddleH+rocketBottomC+rocketBottomH+cargoShipC+cargoShipH), 2))
+
+        team.totalWS = str(round(float(team.totalWS)+(team.Scores.avgAutoTopPCell+rocketTopH+rocketMiddleC+rocketMiddleH+rocketBottomC+rocketBottomH+cargoShipC+cargoShipH), 2))
         imports.add_teamInfo(team)
         
         

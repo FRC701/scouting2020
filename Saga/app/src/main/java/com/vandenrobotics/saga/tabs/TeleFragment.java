@@ -32,7 +32,10 @@ public class TeleFragment extends Fragment {
     private CheckBox redCard_Cb;
     private CheckBox yellowCard_Cb;
     private EditText teleComments;
-
+    private RadioButton climbSpeedFast;
+    private RadioButton climbSpeedMedium;
+    private RadioButton climbSpeedSlow;
+    private RadioButton climbSpeedNo;
     private Button teleTopPC_btn;
     private Button teleBottomPC_btn;
     private CheckBox teleRemovePC;
@@ -103,6 +106,14 @@ public class TeleFragment extends Fragment {
         stats.setTeleTopPC(topPCT);
         stats.setTeleComments(teleComments.getText().toString());
         stats.setTeleBottomPC(bottomPCT);
+        int cTF = (climbSpeedFast.isChecked() ? 1 : 0);
+        stats.setClimbSpeedFast(cTF);
+        int cTM = (climbSpeedMedium.isChecked() ? 1: 0);
+        stats.setClimbSpeedMedium(cTM);
+        int cTS = (climbSpeedSlow.isChecked() ? 1 : 0);
+        stats.setClimbSpeedSlow(cTS);
+        int cTN = (climbSpeedNo.isChecked() ? 1 : 0);
+        stats.setClimbSpeedNo(cTN);
         int disabled = (disabled_Cb.isChecked() ? 1 : 0);
         stats.setDisabled(disabled);
         int rC = (redCard_Cb.isChecked() ? 1 : 0);
@@ -116,7 +127,7 @@ public class TeleFragment extends Fragment {
         int tR = (teleRotation.isChecked() ? 1:0);
         stats.setTeleRotation(tR);
         int tP = (telePosition.isChecked() ? 1:0);
-        stats.setTeleRotation(tP);
+        stats.setTelePosition(tP);
         int tHS = (teleHangSuccess.isChecked() ? 1:0);
         stats.setTeleHangSuccess(tHS);
         int tHA = (teleHangAttempt.isChecked() ? 1:0);
@@ -124,7 +135,7 @@ public class TeleFragment extends Fragment {
         int tHNA = (teleHangNA.isChecked() ? 1:0);
         stats.setTeleHangNA(tHNA);
         int tA = (teleAssist.isChecked() ? 1:0);
-        stats.setTeleHangAttempt(tA);
+        stats.setTeleHangAssist(tA);
         int tAed = (teleAssisted.isChecked() ? 1:0);
         stats.setTeleHangAssisted(tAed);
         int tDN = (teleDefenseNone.isChecked() ? 1:0);
@@ -141,6 +152,9 @@ public class TeleFragment extends Fragment {
         stats.setTeleDefenseOk(tDO);
         int tDNA = (teleDefenseNA.isChecked() ? 1:0);
         stats.setTeleDefenseNA(tDNA);
+
+        System.out.println(" telePosition:" +stats.getTelePosition() + " /n teleAssist:" +stats.getTeleHangAssist());
+
         Log.d("TeleFrag saveData", "team id " + stats.getTeamNum());
         return stats;
     }
@@ -161,6 +175,10 @@ public class TeleFragment extends Fragment {
         topPCT = stats.getTeleTopPC();
 
         bottomPCT = stats.getTeleBottomPC();
+        climbSpeedFast.setChecked(stats.getClimbSpeedFast() == 1);
+        climbSpeedMedium.setChecked(stats.getClimbSpeedMedium() == 1);
+        climbSpeedSlow.setChecked(stats.getClimbSpeedSlow() == 1);
+        climbSpeedNo.setChecked(stats.getClimbSpeedNo() == 1);
         teleRotation.setChecked(stats.getTeleRotation() == 1);
         telePosition.setChecked(stats.getTelePosition() == 1);
         teleHangSuccess.setChecked(stats.getTeleHangSuccess() == 1);
@@ -180,6 +198,10 @@ public class TeleFragment extends Fragment {
     }
     public void assignViews(View view){
         try {
+            climbSpeedFast = (RadioButton) view.findViewById(R.id.climbTimeFast);
+            climbSpeedMedium = (RadioButton) view.findViewById(R.id.climbTimeMedium);
+            climbSpeedSlow = (RadioButton) view.findViewById(R.id.climbTimeLow);
+            climbSpeedNo = (RadioButton) view.findViewById(R.id.climbTimeNo);
             disabled_Cb = (CheckBox) view.findViewById(R.id.disabled_Cb);
             foul_Np = (NumberPicker) view.findViewById(R.id.foul_Np);
             techFoul_Np = (NumberPicker) view.findViewById(R.id.techFoul_Np);

@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a01cf454-5174-414d-93d1-3d71fe25c063" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Saga/app/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Saga/app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Saga/app/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Saga/app/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/activities/PitScoutingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/activities/PitScoutingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/DataBaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/DataBaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/model/PitData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/model/PitData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/model/Stats.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/model/Stats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tabs/AutoFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tabs/AutoFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/repo/PitDataRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/repo/PitDataRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/repo/StatsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/data/repo/StatsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/dialogs/AddEventDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/dialogs/AddEventDialogFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/dialogs/AddTeamDialogFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/dialogs/AddTeamDialogFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tabs/TeleFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tabs/TeleFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tools/ImageTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/java/com/vandenrobotics/saga/tools/ImageTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/activity_pit_scouting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/activity_pit_scouting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/fragment_auto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/fragment_auto.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/dialog_add_event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/dialog_add_event.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/fragment_tele.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/res/layout/fragment_tele.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Saga/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Saga/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/calculate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/imports.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +36,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
-              <caret line="117" column="78" selection-start-line="117" selection-start-column="78" selection-end-line="117" selection-end-column="78" />
+            <state relative-caret-position="340">
+              <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+              <folding>
+                <element signature="e#246#257#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/imports.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+            <state relative-caret-position="251">
+              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -64,13 +74,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/windows/cranking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
+            <state relative-caret-position="544">
               <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/windows/csearch.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -88,27 +98,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/model/stat.py" />
-        <option value="$PROJECT_DIR$/model/imports.py" />
         <option value="$PROJECT_DIR$/model/team.py" />
-        <option value="$PROJECT_DIR$/model/calculate.py" />
         <option value="$PROJECT_DIR$/controller/windows/cranking.py" />
         <option value="$PROJECT_DIR$/controller/windows/csearch.py" />
+        <option value="$PROJECT_DIR$/model/imports.py" />
+        <option value="$PROJECT_DIR$/model/calculate.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,11 +144,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -169,11 +180,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="0" width="697" height="735" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.05023548" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.30500758" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -254,23 +265,6 @@
     <entry file="file://$PROJECT_DIR$/model/model.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/calculate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="117" column="78" selection-start-line="117" selection-start-column="78" selection-end-line="117" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/imports.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="53" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/windows/cchoose.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/windows/cpredict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -280,7 +274,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/windows/cranking.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="544">
           <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
         </state>
       </provider>
@@ -292,5 +286,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/windows/cchoose.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/imports.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/calculate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+          <folding>
+            <element signature="e#246#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
