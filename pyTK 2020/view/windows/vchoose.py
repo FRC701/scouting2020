@@ -2,6 +2,7 @@
 # vchoose module
 #   -- contains information for displaying the alliance selection window
 #------------------------------------------------------------------------------
+import tkinter
 from tkinter import *
 import re
 
@@ -40,14 +41,14 @@ class Choose(Frame):
     def checkSelections(self):
         selected = []
         if self.controller.wantedList:
-            for k in xrange(0,len(self.controller.wantedList)):
-                for i in xrange(0,len(self.alliances)):
-                    for j in xrange(0,3):
+            for k in range(0,len(self.controller.wantedList)):
+                for i in range(0,len(self.alliances)):
+                    for j in range(0,3):
                         team = self.alliances[i][j].get()
                         if int(team) == self.controller.wantedList[k].number:
                             selected.append(k)
 
-            for i in xrange(0,len(self.controller.wantedList)):
+            for i in range(0,len(self.controller.wantedList)):
                 if i in selected:
                     self.wantedList.itemconfig(i,fg="gray")
                 else:
@@ -95,22 +96,22 @@ class Choose(Frame):
             #print(print "File Opened")
             fileOpen = True
         except:
-            fileOpen = Flase
+            fileOpen = False
             #print(print "File Not Opened")
             
             
             
-        for i in xrange(0,len(self.alliances)):
+        for i in range(0,len(self.alliances)):
             if fileOpen == True:
                 newData.write("Alliance " + str(i+1)+"\n")
-            for j in xrange(0,3):
+            for j in range(0,3):
                 if fileOpen == True:
                     newData.write( str(self.alliances[i][j].get())+"\n")
 
                 if team.get() == self.alliances[i][j].get() and int(team.get()) != 0 and i != ally:
                     if int(self.alliances[i][1].get()) != 0:
                         taken = True
-                        tkMessageBox.showinfo("Team Status",
+                        tkinter.messagebox.showinfo("Team Status",
                                               "Team " + str(team.get()) + " is already taken.  Please choose another team.")
                         team.set("0")
                         self.alliances[ally][value].set("0")
@@ -121,7 +122,7 @@ class Choose(Frame):
                         alliance = i
                         break
                 if not available:
-                    tkMessageBox.showinfo("Team Status",
+                    tkinter.messagebox.showinfo("Team Status",
                                           "Team " + str(team.get()) + " is not available.  Please choose another team.")
                     team.set("0")
                     self.alliances[ally][value].set("0")
@@ -132,7 +133,7 @@ class Choose(Frame):
         # deal with the team choice based on their status
         if taken == False and available == True:
             if captain == True:
-                for i in xrange(ally+1,len(self.alliances)):
+                for i in range(ally+1,len(self.alliances)):
                     try:
                         self.alliances[i][0].set(self.alliances[i+1][0].get())
                     except IndexError:
@@ -151,14 +152,14 @@ class Choose(Frame):
 
         # make the label and entry widgets
         self.alliances = []
-        for i in xrange(0,8):
+        for i in range(0,8):
             self.allianceFrame = Frame(self.selectionFrame)
             self.allianceFrame.pack(side=TOP,padx=5,pady=5)
             self.label = Label(self.allianceFrame,text="Alliance %d"%(i+1))
             self.label.pack(side=LEFT,padx=5)
 
             teams = []
-            for j in xrange(0,3):
+            for j in range(0,3):
                 self.EntryVar = StringVar()
                 self.EntryVar.set("0")
                 self.allianceEntry = Entry(self.allianceFrame,textvariable=self.EntryVar,width=4,takefocus=True)

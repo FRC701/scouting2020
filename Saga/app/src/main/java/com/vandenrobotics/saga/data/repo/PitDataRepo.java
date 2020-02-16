@@ -18,14 +18,10 @@ public class PitDataRepo {
     public static String createTable() {
         return "CREATE TABLE " + PitData.TABLE + " ( "
                 + PitData.KEY_TeamNum + " INTEGER PRIMARY KEY , "
-                + PitData.KEY_Auto + " INTEGER , "
-                + PitData.KEY_ScoreBottom + " INTEGER , "
-                + PitData.KEY_ScoreTop + " INTEGER , "
                 + PitData.KEY_IntakeAndMech + " TEXT , "
                 + PitData.KEY_DriveTrain + " TEXT , "
                 + PitData.KEY_Lang + " TEXT , "
                 + PitData.KEY_Speed + " TEXT , "
-                + PitData.KEY_ScoringMechanism + " TEXT , "
                 + PitData.KEY_BallsDuringAuto + " TEXT , "
                 + PitData.KEY_AutoYes + " INTEGER , "
                 + PitData.KEY_AutoNo + " INTEGER , "
@@ -33,18 +29,14 @@ public class PitDataRepo {
                 + PitData.KEY_IntakeBallsPit + " INTEGER , "
                 + PitData.KEY_ScoreLowerPortPit + " INTEGER , "
                 + PitData.KEY_ScoreOuterPortPit + " INTEGER , "
-                + PitData.KEY_StageOnePit + " INTEGER , "
-                + PitData.KEY_StageTwoPit + " INTEGER , "
-                + PitData.KEY_StageThreePit + " INTEGER , "
                 + PitData.KEY_BottomPortScore + " INTEGER , "
                 + PitData.KEY_OuterPortScore + " INTEGER , "
                 + PitData.KEY_InnerPortScore + " INTEGER , "
                 + PitData.KEY_PositionPanel + " INTEGER , "
                 + PitData.KEY_RotatePanel + " INTEGER , "
-                + PitData.KEY_AssistClimbPit + " INTEGER , "
-                + PitData.KEY_DuringClimbPark + " INTEGER , "
-                + PitData.KEY_RobotClimbClimb + " INTEGER , "
-                + PitData.KEY_DuringClimbAssist + " INTEGER , "
+                + PitData.KEY_AssistClimb + " INTEGER , "
+                + PitData.KEY_ParkRobot + " INTEGER , "
+                + PitData.KEY_RobotClimb + " INTEGER , "
                 + PitData.KEY_IntakePowerCellsYes + " INTEGER , "
                 + PitData.KEY_IntakePowerCellsNo + " INTEGER , "
                 + PitData.KEY_RobotDefenseYesPit + " INTEGER , "
@@ -61,29 +53,21 @@ public class PitDataRepo {
         values.put(PitData.KEY_DriveTrain, pitData.getDriveTrain());
         values.put(PitData.KEY_Lang, pitData.getLang());
         values.put(PitData.KEY_Speed, pitData.getSpeed());
-        values.put(PitData.KEY_ScoringMechanism, pitData.getScoringMechanism());
         values.put(PitData.KEY_BallsDuringAuto, pitData.getBallsDuringAuto());
-        values.put(PitData.KEY_Auto, pitData.getAuto());
-        values.put(PitData.KEY_ScoreBottom, pitData.getScoreBottom());
-        values.put(PitData.KEY_ScoreTop, pitData.getScoreTop());
         values.put(PitData.KEY_AutoYes, pitData.getAutoYes());
         values.put(PitData.KEY_AutoNo, pitData.getAutoNo());
         values.put(PitData.KEY_CrossLinePit, pitData.getCrossLinePit());
         values.put(PitData.KEY_IntakeBallsPit, pitData.getIntakeBallsPit());
         values.put(PitData.KEY_ScoreLowerPortPit, pitData.getScoreLowerPortPit());
         values.put(PitData.KEY_ScoreOuterPortPit, pitData.getScoreOuterPortPit());
-        values.put(PitData.KEY_StageOnePit, pitData.getStageOnePit());
-        values.put(PitData.KEY_StageTwoPit, pitData.getStageTwoPit());
-        values.put(PitData.KEY_StageThreePit, pitData.getStageThreePit());
         values.put(PitData.KEY_BottomPortScore, pitData.getBottomPortScore());
         values.put(PitData.KEY_OuterPortScore, pitData.getOuterPortScore());
         values.put(PitData.KEY_InnerPortScore, pitData.getInnerPortScore());
         values.put(PitData.KEY_PositionPanel, pitData.getPositionPanel());
         values.put(PitData.KEY_RotatePanel, pitData.getRotatePanel());
-        values.put(PitData.KEY_AssistClimbPit, pitData.getAssistClimbPit());
-        values.put(PitData.KEY_DuringClimbPark, pitData.getDuringClimbPark());
-        values.put(PitData.KEY_RobotClimbClimb, pitData.getRobotClimbClimb());
-        values.put(PitData.KEY_DuringClimbAssist, pitData.getDuringClimbAssist());
+        values.put(PitData.KEY_AssistClimb, pitData.getAssistClimb());
+        values.put(PitData.KEY_ParkRobot, pitData.getParkRobot());
+        values.put(PitData.KEY_RobotClimb, pitData.getRobotClimb());
         values.put(PitData.KEY_IntakePowerCellsYes, pitData.getIntakePowerCellsYes());
         values.put(PitData.KEY_IntakePowerCellsNo, pitData.getIntakePowerCellsNo());
         values.put(PitData.KEY_RobotDefenseYesPit, pitData.getRobotDefenseYesPit());
@@ -105,29 +89,21 @@ public class PitDataRepo {
         values.put(PitData.KEY_DriveTrain, pitData.getDriveTrain());
         values.put(PitData.KEY_Lang, pitData.getLang());
         values.put(PitData.KEY_Speed, pitData.getSpeed());
-        values.put(PitData.KEY_ScoringMechanism, pitData.getScoringMechanism());
         values.put(PitData.KEY_BallsDuringAuto, pitData.getBallsDuringAuto());
-        values.put(PitData.KEY_Auto, pitData.getAuto());
-        values.put(PitData.KEY_ScoreBottom, pitData.getScoreBottom());
-        values.put(PitData.KEY_ScoreTop, pitData.getScoreTop());
         values.put(PitData.KEY_AutoNo, pitData.getAutoNo());
         values.put(PitData.KEY_AutoYes, pitData.getAutoYes());
         values.put(PitData.KEY_CrossLinePit, pitData.getCrossLinePit());
         values.put(PitData.KEY_IntakeBallsPit, pitData.getIntakeBallsPit());
         values.put(PitData.KEY_ScoreLowerPortPit, pitData.getScoreLowerPortPit());
         values.put(PitData.KEY_ScoreOuterPortPit, pitData.getScoreOuterPortPit());
-        values.put(PitData.KEY_StageOnePit, pitData.getStageOnePit());
-        values.put(PitData.KEY_StageTwoPit, pitData.getStageTwoPit());
-        values.put(PitData.KEY_StageThreePit, pitData.getStageThreePit());
         values.put(PitData.KEY_BottomPortScore, pitData.getBottomPortScore());
         values.put(PitData.KEY_OuterPortScore, pitData.getOuterPortScore());
         values.put(PitData.KEY_InnerPortScore, pitData.getInnerPortScore());
         values.put(PitData.KEY_PositionPanel, pitData.getPositionPanel());
         values.put(PitData.KEY_RotatePanel, pitData.getRotatePanel());
-        values.put(PitData.KEY_AssistClimbPit, pitData.getAssistClimbPit());
-        values.put(PitData.KEY_DuringClimbPark, pitData.getDuringClimbPark());
-        values.put(PitData.KEY_RobotClimbClimb, pitData.getRobotClimbClimb());
-        values.put(PitData.KEY_DuringClimbAssist, pitData.getDuringClimbAssist());
+        values.put(PitData.KEY_AssistClimb, pitData.getAssistClimb());
+        values.put(PitData.KEY_ParkRobot, pitData.getParkRobot());
+        values.put(PitData.KEY_RobotClimb, pitData.getRobotClimb());
         values.put(PitData.KEY_IntakePowerCellsYes, pitData.getIntakePowerCellsYes());
         values.put(PitData.KEY_IntakePowerCellsNo, pitData.getIntakePowerCellsNo());
         values.put(PitData.KEY_RobotDefenseYesPit, pitData.getRobotDefenseYesPit());
@@ -162,34 +138,25 @@ public class PitDataRepo {
 
         SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
         String selectQuery = " SELECT PitData." +PitData.KEY_TeamNum
-                + ", PitData." + PitData.KEY_Auto
                 + ", PitData." + PitData.KEY_IntakeAndMech
                 + ", PitData." + PitData.KEY_DriveTrain
                 + ", PitData." + PitData.KEY_Lang
                 + ", PitData." + PitData.KEY_Speed
-                + ", PitData." + PitData.KEY_ScoringMechanism
                 + ", PitData." + PitData.KEY_BallsDuringAuto
-                + ", PitData." + PitData.KEY_Auto
-                + ", PitData." + PitData.KEY_ScoreBottom
-                + ", PitData." + PitData.KEY_ScoreTop
                 + ", PitData." + PitData.KEY_AutoNo
                 + ", PitData." + PitData.KEY_AutoYes
                 + ", PitData." + PitData.KEY_CrossLinePit
                 + ", PitData." + PitData.KEY_IntakeBallsPit
                 + ", PitData." + PitData.KEY_ScoreLowerPortPit
                 + ", PitData." + PitData.KEY_ScoreOuterPortPit
-                + ", PitData." + PitData.KEY_StageOnePit
-                + ", PitData." + PitData.KEY_StageTwoPit
-                + ", PitData." + PitData.KEY_StageThreePit
                 + ", PitData." + PitData.KEY_BottomPortScore
                 + ", PitData." + PitData.KEY_OuterPortScore
                 + ", PitData." + PitData.KEY_InnerPortScore
                 + ", PitData." + PitData.KEY_PositionPanel
                 + ", PitData." + PitData.KEY_RotatePanel
-                + ", PitData." + PitData.KEY_AssistClimbPit
-                + ", PitData." + PitData.KEY_DuringClimbPark
-                + ", PitData." + PitData.KEY_RobotClimbClimb
-                + ", PitData." + PitData.KEY_DuringClimbAssist
+                + ", PitData." + PitData.KEY_AssistClimb
+                + ", PitData." + PitData.KEY_ParkRobot
+                + ", PitData." + PitData.KEY_RobotClimb
                 + ", PitData." + PitData.KEY_IntakePowerCellsYes
                 + ", PitData." + PitData.KEY_IntakePowerCellsNo
                 + ", PitData." + PitData.KEY_RobotDefenseYesPit
@@ -201,33 +168,25 @@ public class PitDataRepo {
                 + " WHERE PitData." + PitData.KEY_TeamNum + " = " + teamNum;
         Cursor cursor = db.rawQuery(selectQuery, null);
         if(cursor.moveToFirst()){
-            pitData.setAuto(cursor.getInt(cursor.getColumnIndex(PitData.KEY_Auto)));
             pitData.setIntakeAndMech(cursor.getString(cursor.getColumnIndex(PitData.KEY_IntakeAndMech)));
             pitData.setDriveTrain(cursor.getString(cursor.getColumnIndex(PitData.KEY_DriveTrain)));
             pitData.setLang(cursor.getString(cursor.getColumnIndex(PitData.KEY_Lang)));
             pitData.setSpeed(cursor.getString(cursor.getColumnIndex(PitData.KEY_Speed)));
-            pitData.setScoringMechanism(cursor.getString(cursor.getColumnIndex(PitData.KEY_ScoringMechanism)));
             pitData.setBallsDuringAuto(cursor.getString(cursor.getColumnIndex(PitData.KEY_BallsDuringAuto)));
-            pitData.setScoreBottom(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreBottom)));
-            pitData.setScoreTop(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreTop)));
             pitData.setAutoNo(cursor.getInt(cursor.getColumnIndex(PitData.KEY_AutoNo)));
             pitData.setAutoYes(cursor.getInt(cursor.getColumnIndex(PitData.KEY_AutoYes)));
             pitData.setCrossLinePit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_CrossLinePit)));
             pitData.setIntakeBallsPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakeBallsPit)));
             pitData.setScoreLowerPortPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreLowerPortPit)));
             pitData.setScoreOuterPortPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ScoreOuterPortPit)));
-            pitData.setStageOnePit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_StageOnePit)));
-            pitData.setStageTwoPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_StageTwoPit)));
-            pitData.setStageThreePit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_StageThreePit)));
             pitData.setBottomPortScore(cursor.getInt(cursor.getColumnIndex(PitData.KEY_BottomPortScore)));
             pitData.setOuterPortScore(cursor.getInt(cursor.getColumnIndex(PitData.KEY_OuterPortScore)));
             pitData.setInnerPortScore(cursor.getInt(cursor.getColumnIndex(PitData.KEY_InnerPortScore)));
             pitData.setPositionPanel(cursor.getInt(cursor.getColumnIndex(PitData.KEY_PositionPanel)));
             pitData.setRotatePanel(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RotatePanel)));
-            pitData.setAssistClimbPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_AssistClimbPit)));
-            pitData.setDuringClimbPark(cursor.getInt(cursor.getColumnIndex(PitData.KEY_DuringClimbPark)));
-            pitData.setRobotClimbClimb(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotClimbClimb)));
-            pitData.setDuringClimbAssist(cursor.getInt(cursor.getColumnIndex(PitData.KEY_DuringClimbAssist)));
+            pitData.setAssistClimb(cursor.getInt(cursor.getColumnIndex(PitData.KEY_AssistClimb)));
+            pitData.setParkRobot(cursor.getInt(cursor.getColumnIndex(PitData.KEY_ParkRobot)));
+            pitData.setRobotClimb(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotClimb)));
             pitData.setIntakePowerCellsYes(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakePowerCellsYes)));
             pitData.setIntakePowerCellsNo(cursor.getInt(cursor.getColumnIndex(PitData.KEY_IntakePowerCellsNo)));
             pitData.setRobotDefenseYesPit(cursor.getInt(cursor.getColumnIndex(PitData.KEY_RobotDefenseYesPit)));

@@ -20,26 +20,34 @@ class TeamDataController():
                      ("negativeWS", "Negative Weighted Score: "),
                      ("pNoShow", "No Show Percentage: "),
                      
-                     ("pStartLevel1", "Start on Level 1 Percentage: "),
-                     ("pStartLevel2", "Start on Level 2 Percentage: "),
-                     ("pPreloadCargo", "Preload Cargo Percentage: "),
-                     ("pPreloadHatch", "Preload Hatch Percentage: "),
-                     ("pCrossHubLine", "Cross Hubline Percentage: "),
-                     
-                     ("avgRocketTopC", "Average Number Of Cargo in Top Rocket: "),
-                     ("avgRocketTopH", "Average Number Of Hatch in Top Rocket: "),
-                     ("avgRocketMiddleC", "Average Number Of Cargo in Middle Rocket: "),
-                     ("avgRocketMiddleH", "Average Number Of Hatch in Middle Rocket: "),
-                     ("avgRocketBottomC", "Average Number Of Cargo in Bottom Rocket: "),
+                     ("pAutoCrossLine", "Cross Line Percentage: "),
+                     ("pAutoDoesntMove", "do not move in auto Percentage: "),
+                     ("pAutoIntake", "the intake in auto Percentage: "),
 
-                     ("avgRocketBottomH", "Average Number Of Hatch in Bottom Rocket: "),
-                     ("avgCargoShipC", "Average Number Of Cargo in Cargo Ship: "),
-                     ("avgCargoShipH", "Average Number Of Hatch in Cargo Ship: "),
-                     ("pEndLevel1", "End Level 1 Percentage: "),
-                     ("pEndLevel2", "End Level 2 Percentage: "),
+                     ("avgAutoTopPCell", "The average top power cell in auto: "),
+                     ("avgAutoBottomPCell", "The average bottom power cell in auto: "),
+                     ("avgTeleBottomPC", "The average bottom power cell in tele: "),
+                     ("avgTeleTopPC", "The average top power cell in tele: "),
 
-                     ("pEndLevel3", "End Level 3 Percentage: "),
-                     ("pEndNone", "No End Level Percentage: "),
+                     ("pTeleRotation", "Completed rotation control: "),
+                     ("pTelePosition", "Completed position control: "),
+                     ("pTeleHangSucess", "Completed Hanging: "),
+                     ("pTeleHangAttempt", "Attempted to hang: "),
+                     ("pTeleHangNA", "Did not attempt to Hang: "),
+                     ("pTeleAssist", "Helped another team hang: "),
+                     ("pTeleAssisted", "Were Helped by another team to hang: "),
+                     ("pTeleDefenseNone", "Does not play defense: "),
+                     ("pTeleDefenseSome", "A moderate amount of defense: "),
+                     ("pTeleDefenseAll", "They only do defense: "),
+                     ("pTeleDefenseGood", "Good at Defense: "),
+                     ("pTeleDefenseBad", "Bad at defense: "),
+                     ("pTeleDefenseOk", "Not the best at defense but not the worst at it: "),
+                     ("pTeleDefenseNA", "Does not do defense: "),
+                     ("pTeleClimbSpeedFast", "Fast at climbing: "),
+                     ("pTeleClimbSpeedMedium", "not too fast at climbing but not slow either: "),
+                     ("pTeleClimbSpeedSlow", "Has a slow climb speed: "),
+                     ("pTeleClimbSpeedNo", "Did not climb: "),
+
                      ("pFoul", "Matches Had Foul: "),
                      ("pTechFoul", "Matches Had Tech Foul: "),
                      ("pYellowCard", "Matches Had Yellow Card: "),
@@ -47,30 +55,23 @@ class TeamDataController():
                      ("pRedCard", "Matches Had Red Card: "),
                      ("pDisabled", "Matches Where The Robot Was Disabled: ")]
 
-    maxminLabelVals = [("maxRocketTopC","Maximum Number Of Cargo in Top Rocket: "),("minRocketTopC","Minimum Number Of Cargo in Top Rocket: "),
-                       ("maxRocketTopH","Maximum Number Of Hatch in Top Rocket: "),("minRocketTopH","Minimum Number Of Hatch in Top Rocket: "),
-                       ("maxRocketMiddleC","Maximum Number Of Cargo in Middle Rocket: "),("minRocketMiddleC","Minimum Number Of Cargo in Middle Rocket: "),
-
-                       ("maxRocketMiddleH","Maximum Number Of Hatch in Middle Rocket: "),("minRocketMiddleH","Minimum Number Of Hatch in Middle Rocket: "),
-                       ("maxRocketBottomC","Maximum Number Of Cargo in Bottom Rocket: "),("minRocketBottomC","Minimum Number Of Cargo in Bottom Rocket: "),
-                       ("maxRocketBottomH","Maximum Number Of Hatch in Bottom Rocket: "),("minRocketBottomH","Minimum Number Of Hatch in Bottom Rocket: "),
-                       ("maxCargoShipC","Maximum Number Of Cargo in Cargo Ship: "),("minCargoShipC","Minimum Number Of Cargo in Cargo Ship: "),
-                       ("maxCargoShipH","Maximum Number Of Hatch in Cargo Ship: "),("minCargoShipH","Minimum Number Of Hatch in Cargo Ship: "),
-                       ("totalCargo", "Average Total Cargo: "),
-                       ("totalHatch", "Average Total Hatch: "),
-                       ("totalGamePiece", "Average Total Game Pieces: "),]
+    maxminLabelVals = [("maxAutoTopPCell", ": max amount of top power cells in auto: "),
+                       ("minAutoTopPCell", ": min top power cells in auto"),
+                       ("maxAutoBottomPCell", ": max bottom power cells in auto: "),
+                       ("minAutoBottomPCell", ": min bottom power cells in auto"),
+                       ("maxTeleTopPC", ": max top power cells in tele"),
+                       ("minTeleTopPC", ": min top power cells in tele"),
+                       ("maxTeleBottomPC", ": max bottom power cells in tele"),
+                       ("minTeleBottomPC", ": min bottom power cells in tele")]
     
-    pitDataStrings = []
-                       
+    pitDataStrings = [
 
-    graphVals = [("avgRocketTopC", "Scores","rocketTopC"),
-                 ("avgRocketTopH", "Scores","rocketTopH"),
-                 ("avgRocketMiddleC", "Scores","rocketMiddleC"),
-                 ("avgRocketMiddleH", "Scores","rocketMiddleH"),
-                 ("avgRocketBottomC", "Scores","rocketBottomC"),
-                 ("avgRocketBottomH", "Scores","rocketBottomH"),
-                 ("avgCargoShipC", "Scores","cargoShipC"),
-                 ("avgCargoShipH", "Scores","cargoShipH")]
+    ]
+
+    graphVals = [("avgAutoTopPCell", "Scores","autoTopPCell"),
+                 ("avgAutoBottomPCell", "Scores","autoBottomPCell"),
+                 ("avgTeleTopPC", "Scores","teleTopPC"),
+                 ("avgTeleBottomPC", "Scores","teleBottomPC")]
     
     def __init__(self):
         self.teamNum = 0

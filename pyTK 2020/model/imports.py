@@ -10,7 +10,7 @@ import controller.windows.cteamdata as cteamdata
 conn = sqlite3.connect('TabletData.db')
 c = conn.cursor()
 
-filePath = "C:\Scouting\pyTK 2019\Sqlite Database\\"
+filePath = "C:\Scouting2020\pyTK 2020\Sqlite Database\\"
 
 
 def create_table():
@@ -22,11 +22,15 @@ def create_table():
     CREATE TABLE IF NOT EXISTS MatchesAll( CompId TEXT, MatchNumber INTEGER,
               TeamNumber INTEGER, MatchPosition INTEGER,
               PRIMARY KEY(MatchNumber, TeamNumber, MatchPosition));
-    CREATE TABLE IF NOT EXISTS PitDataAll( TeamNumber INTEGER PRIMARY KEY,
-              Auto INTEGER, DriveBlindly INTEGER, Vision INTEGER, Camera INTEGER, Other INTEGER,
-              TypeOfIntakeAndMech TEXT,
-              TypeOfDriveTrain TEXT, ProgrammingLanguage TEXT, Comments TEXT, AverageSpeed TEXT,
-              CoDriverExperience TEXT, DriverExperience TEXT, Climb TEXT);
+    CREATE TABLE IF NOT EXISTS PitDataAll( TeamNumber INTEGER PRIMARY KEY, TypeOfIntakeAndMech TEXT,
+              TypeOfDriveTrain TEXT, ProgrammingLanguage TEXT, AverageSpeed TEXT, BallsDuringAuto TEXT, 
+              AutoAnswerYes INTEGER, AutoAnswerNo INTEGER,
+              AutoCrossLinePit INTEGER, AutoIntakeBallsPit INTEGER, AutoScoreLower INTEGER,
+              AutoScoreOuter INTEGER, AutoScoreInner INTEGER, ScoreBottomPort INTEGER,
+              ScoreOuterPort INTEGER, ScoreInnerPort INTEGER, PositionControlPanel INTEGER,
+              RotateControlPanel INTEGER, AssistClimb INTEGER, ParkRobot INTEGER,
+              RobotClimb INTEGER, PowerCellIntakeYes INTEGER,
+              PowerCellIntakeNo INTEGER, DefenseRobotYes INTEGER, DefenseRobotNo INTEGER );
     CREATE TABLE IF NOT EXISTS StatsAll( CompId TEXT, MatchNumber INTEGER,
               TeamNumber INTEGER, MatchPosition INTEGER,
               TopPCellAuto INTEGER, BottomPCellAuto INTEGER,
@@ -52,11 +56,23 @@ def create_table():
     CREATE TABLE IF NOT EXISTS TeamInfo(TeamNum INTEGER PRIMARY KEY, NumMatch INTEGER,
                 OffWS REAL,
                 TotalWS REAL, NegWS REAL,
-                PercentNoShow REAL,
+                PercentNoShow REAL, PercentHasFoul REAL,
                 PercentFouls REAL, PercentTechFouls REAL,
                 PercentYellowCard REAL, PercentRedCard REAL, 
-                PercentRobotDisabled REAL, 
-                TotalGamePiece REAL)''')
+                PercentRobotDisabled REAL, PercentAutoCrossLine REAL, 
+                PercentAutoDoesntMove REAL, PercentAutoIntake REAL,
+                PercentTeleRotation REAL, PercentTelePosition REAL,
+                PercentTeleHangSucess REAL, PercentTeleHangAttempt REAL,
+                PercentTeleHangNA REAL, PercentTeleAssist REAL,
+                PercentTeleAssisted REAL,
+                PercentTeleDefenseNone REAL, PercentTeleDefenseSome REAL,
+                PercentTeleDefenseAll REAL, PercentTeleDefenseGood REAL,
+                PercentTeleDefenseBad REAL, PercentTeleDefenseOk REAL,
+                PercentTeleDefenseNA REAL, PercentTeleClimbSpeedFast REAL,
+                PercentTeleClimbSpeedMedium REAL, PercentTeleClimbSpeedSlow REAL,
+                PercentTeleClimbSpeedNo REAL, AverageAutoTopPC REAL,
+                AverageAutoBottomPC REAL, AverageTeleBottomPC REAL,
+                AverageTeleTopPC REAL)''')
 
 def add_data(model):
     model.imported = False
@@ -101,7 +117,8 @@ def add_data(model):
         try:
             tc.execute('SELECT * FROM PitData')
             pitData = tc.fetchall()
-            c.executemany('INSERT OR REPLACE INTO PitDataAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', pitData)
+            c.executemany('INSERT OR REPLACE INTO PitDataAll VALUES (?, ?, ?,'
+                          ' ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', pitData)
             model.imported = True
             print("successfully imported pitdata") 
         except Exception as e:
@@ -117,7 +134,9 @@ def add_data(model):
                 print("No stats info to import")
                 model.imported = True
             else:
-                c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)', stats)
+                c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, '
+                              '?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'
+                              ' ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', stats)
                 model.imported = True
                 print("successfully imported stats") 
         except Exception as e:
@@ -146,7 +165,10 @@ def add_teamInfo(team):
     print(teamInfo)
     temp.append(tuple(teamInfo))
     print(len(temp))
-    c.executemany('INSERT OR REPLACE INTO TeamInfo VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', temp)
+    c.executemany('INSERT OR REPLACE INTO TeamInfo VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'
+                  ' ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '
+                  '?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '
+                  ' ?, ?, ?, ?, ?, ?, ?)', temp)
     conn.commit()
     
     
@@ -197,10 +219,12 @@ def add_pitData():
     for filename in dirList:
         tabletconn = sqlite3.connect(filePath + filename)
         tc = tabletconn.cursor()
+
         
         tc.execute('SELECT * FROM PitData')
         pitData = tc.fetchall()
-        c.executemany('INSERT OR REPLACE INTO PitDataAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', pitData)
+        c.executemany('INSERT OR REPLACE INTO PitDataAll VALUES (?, ?, ?, ?, ?, ?, ?, ?,'
+                      ' ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', pitData)
 def add_stats():
     global conn
     global c
@@ -214,8 +238,9 @@ def add_stats():
         tc.execute('SELECT * FROM Stats')
         stats = tc.fetchall()
         print(stats)
-        c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)',
-            stats)
+        c.executemany('INSERT OR REPLACE INTO StatsAll VALUES (?, ?, '
+                      '?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,'
+                      ' ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', stats)
 
 def clear_importData():
     model.imported = False

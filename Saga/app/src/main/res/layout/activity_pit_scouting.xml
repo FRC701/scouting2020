@@ -195,7 +195,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/climbQuestion"
+                android:text="@string/endgameQuestion"
                 android:textColor="@color/Red"/>
 
             <LinearLayout
@@ -299,21 +299,6 @@
                 android:ems="10"
                 android:inputType=""
                 android:hint="@string/ballsDuringAuto"/>
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/scoringMechanismQuestion" />
-
-            <EditText
-                android:id="@+id/pit_scoringMechanism"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text=""
-                android:hint="@string/scoringMechanism"/>
 
             <TextView
                 android:id="@+id/textView14"

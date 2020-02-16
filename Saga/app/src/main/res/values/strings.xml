@@ -244,4 +244,5 @@
     <string name="scoringMechanism">Scoring Mechanism</string>
     <string name="ballsDuringAuto">Auto number of balls</string>
     <string name="scoringMechanismQuestion">What mechanism do you use to score during auto?</string>
+    <string name="endgameQuestion">What do you do during endgame?</string>
 </resources>

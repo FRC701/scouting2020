@@ -1,3 +1,5 @@
+from model.stat import get_pitTeams
+
 try:
     # for Python2
     from Tkinter import *   ## notice capitalized T in Tkinter 
@@ -42,7 +44,7 @@ class App(Frame):
         imports.import_pitData(filedialog.askopenfilename())
         self.pitImported = model.pitImported
         if self.pitImported:
-            calculate.calculate_pit_data()
+            calculate.calculate_pit_data(get_pitTeams())
         else:
             messagebox.showinfo("Warning","Import PitData Failed.")
 

@@ -29,10 +29,10 @@ class RankingController():
                     "Tele Bottom Power Cell"]
 
     rankingIndex = [("None", get_none),
-                    ("Auto Top Power Cell", get_autoTopPCell_rank),
-                    ("Auto Bottom Power Cell", get_autoBottomPCell_rank),
-                    ("Tele Top Power Cell", get_teleTopPC_rank),
-                    ("Tele Bottom Power Cell", get_teleBottomPC_rank)]
+                    ("Auto Top Power Cell", get_auto_top_p_cell_rank()),
+                    ("Auto Bottom Power Cell", get_auto_bottom_p_cell_rank()),
+                    ("Tele Top Power Cell", get_tele_top_p_cell_rank()),
+                    ("Tele Bottom Power Cell", get_tele_bottom_p_cell_rank())]
 
     sortOptions = [("Maximum","max"),("Average","avg"),("Minimum","min")]
 

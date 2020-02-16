@@ -27,7 +27,6 @@ public class PitScoutingActivity extends AppCompatActivity {
     private EditText driveTrain;
     private EditText speed;
     private EditText lang;
-    private EditText scoringMechanism;
     private EditText ballsDuringAuto;
     private RadioButton autoYes;
     private RadioButton autoNo;
@@ -43,7 +42,7 @@ public class PitScoutingActivity extends AppCompatActivity {
     private CheckBox pitRotateControlPanel;
     private CheckBox pitAssistClimb;
     private CheckBox pitParkRobot;
-    private CheckBox pitClimbClimb;
+    private CheckBox pitRobotClimb;
     private RadioButton pitIntakeYes;
     private RadioButton pitIntakeNo;
     private RadioButton pitDefenseYes;
@@ -110,7 +109,6 @@ public class PitScoutingActivity extends AppCompatActivity {
         driveTrain = (EditText)findViewById(R.id.pit_driveTrain);
         speed = (EditText)findViewById(R.id.pit_speed);
         lang = (EditText)findViewById(R.id.pit_programmingLanguage);
-        scoringMechanism = (EditText)findViewById((R.id.pit_scoringMechanism));
         ballsDuringAuto = (EditText)findViewById(R.id.pit_ballsDuringAuto);
         autoYes = (RadioButton)findViewById(R.id.pit_autoYes);
         autoNo = (RadioButton)findViewById(R.id.pit_autoNo);
@@ -126,7 +124,7 @@ public class PitScoutingActivity extends AppCompatActivity {
         pitRotateControlPanel = (CheckBox)findViewById(R.id.pit_rotateControlPanel);
         pitAssistClimb = (CheckBox)findViewById(R.id.pit_assistClimb);
         pitParkRobot = (CheckBox)findViewById(R.id.pit_parkRobot);
-        pitClimbClimb = (CheckBox)findViewById(R.id.pit_climbRobot);
+        pitRobotClimb = (CheckBox)findViewById(R.id.pit_climbRobot);
         pitIntakeYes = (RadioButton)findViewById(R.id.pit_intakePowerCellsYes);
         pitIntakeNo = (RadioButton)findViewById(R.id.pit_intakePowerCellsNo);
         pitDefenseYes = (RadioButton)findViewById(R.id.pit_defenseYes);
@@ -139,7 +137,6 @@ public class PitScoutingActivity extends AppCompatActivity {
        pitdata.setDriveTrain(driveTrain.getText().toString());
        pitdata.setSpeed(speed.getText().toString());
        pitdata.setLang(lang.getText().toString());
-       pitdata.setScoringMechanism(scoringMechanism.getText().toString());
        pitdata.setBallsDuringAuto(ballsDuringAuto.getText().toString());
 
        int aY = (autoYes.isChecked() ? 1:0);
@@ -167,11 +164,11 @@ public class PitScoutingActivity extends AppCompatActivity {
        int rCP = (pitRotateControlPanel.isChecked() ? 1:0);
        pitdata.setRotatePanel(rCP);
        int pAC = (pitAssistClimb.isChecked() ? 1:0);
-       pitdata.setAssistClimbPit(pAC);
+       pitdata.setAssistClimb(pAC);
        int pPR = (pitParkRobot.isChecked() ? 1:0);
-       pitdata.setDuringClimbPark(pPR);
-       int pCC = (pitClimbClimb.isChecked() ? 1:0);
-       pitdata.setRobotClimbClimb(pCC);
+       pitdata.setParkRobot(pPR);
+       int pCC = (pitRobotClimb.isChecked() ? 1:0);
+       pitdata.setRobotClimb(pCC);
        int iPCY = (pitIntakeYes.isChecked() ? 1:0);
        pitdata.setIntakePowerCellsYes(iPCY);
        int iPCN = (pitIntakeNo.isChecked() ? 1:0);
@@ -185,8 +182,8 @@ public class PitScoutingActivity extends AppCompatActivity {
                " /n autoIntakeBalls:" + pitdata.getIntakeBallsPit()+ " /n autoScoreLower:" + pitdata.getScoreLowerPortPit()+ " /n autoScoreOuter:" + pitdata.getScoreOuterPortPit()+
                " /n autoScoreInner:" + pitdata.getScoreInnerPortPit()+ " /n pitScoreBottomPort:" + pitdata.getBottomPortScore()+ " /n pitScoreOuterPort:" + pitdata.getOuterPortScore()+
                " /n pitScoreInnerPort:" + pitdata.getInnerPortScore()+ " /n pitPositionControlPanel:" + pitdata.getPositionPanel()+
-               " /n pitRotateControlPanel:" + pitdata.getRotatePanel()+ " /n pitAssistClimb:" + pitdata.getAssistClimbPit()+ " /n pitParkRobot:" + pitdata.getDuringClimbPark()+
-               " /n pitClimbClimb:" + pitdata.getRobotClimbClimb()+ " /n pitIntakeYes:" + pitdata.getIntakePowerCellsYes()+ " /n pitIntakeNo:" + pitdata.getIntakePowerCellsNo()+
+               " /n pitRotateControlPanel:" + pitdata.getRotatePanel()+ " /n pitAssistClimb:" + pitdata.getAssistClimb()+ " /n pitParkRobot:" + pitdata.getRobotClimb()+
+               " /n pitClimbClimb:" + pitdata.getRobotClimb()+ " /n pitIntakeYes:" + pitdata.getIntakePowerCellsYes()+ " /n pitIntakeNo:" + pitdata.getIntakePowerCellsNo()+
                " /n pitDefenseYes:" +  pitdata.getRobotDefenseYesPit()+ " /n pitDefenseNo:" + pitdata.getRobotDefenseNoPit());
 
 
@@ -204,7 +201,6 @@ public class PitScoutingActivity extends AppCompatActivity {
         driveTrain.setText(pitData.getDriveTrain());
         speed.setText(pitData.getSpeed());
         lang.setText(pitData.getLang());
-        scoringMechanism.setText(pitData.getScoringMechanism());
         ballsDuringAuto.setText(pitData.getBallsDuringAuto());
         autoYes.setChecked(pitData.getAutoYes() == 1);
         autoNo.setChecked(pitData.getAutoNo() == 1);
@@ -218,9 +214,9 @@ public class PitScoutingActivity extends AppCompatActivity {
         pitScoreInnerPort.setChecked(pitData.getInnerPortScore() == 1);
         pitPositionControlPanel.setChecked(pitData.getPositionPanel() == 1);
         pitRotateControlPanel.setChecked(pitData.getRotatePanel() == 1);
-        pitAssistClimb.setChecked(pitData.getAssistClimbPit() == 1);
-        pitParkRobot.setChecked(pitData.getDuringClimbPark() == 1);
-        pitClimbClimb.setChecked(pitData.getRobotClimbClimb() == 1);
+        pitAssistClimb.setChecked(pitData.getAssistClimb() == 1);
+        pitParkRobot.setChecked(pitData.getParkRobot() == 1);
+        pitRobotClimb.setChecked(pitData.getRobotClimb() == 1);
         pitIntakeYes.setChecked(pitData.getIntakePowerCellsYes() == 1);
         pitIntakeNo.setChecked(pitData.getIntakePowerCellsNo() == 1);
         pitDefenseYes.setChecked(pitData.getRobotDefenseYesPit() == 1);
